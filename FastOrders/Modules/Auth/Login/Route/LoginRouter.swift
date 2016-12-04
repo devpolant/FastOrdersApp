@@ -26,4 +26,32 @@ class LoginRouter: Router {
     func presentRegistrationViewController() {
         viewController?.performSegue(withIdentifier: "showRegistration", sender: nil)
     }
+    
+    func presentMapViewController() {
+        
+    }
+    
+    
+    //MARK: - Segue
+    
+    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let identifier = segue.identifier else { return }
+        
+        switch identifier {
+            
+        case "showRegistration":
+            
+            let vc = segue.destination as! RegistrationViewController
+            
+            vc.interactor = RegistrationInteractor()
+            vc.interactor.viewController = vc
+            
+            vc.router = RegistrationRouter()
+            vc.router.viewController = vc
+            
+        default:
+            break
+        }
+    }
 }

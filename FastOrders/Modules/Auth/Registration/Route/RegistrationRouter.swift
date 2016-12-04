@@ -16,4 +16,8 @@ class RegistrationRouter: Router {
     func contentViewController() -> UIViewController? {
         return viewController
     }
+    
+    func presentMapViewController() {
+        
+    }
 }

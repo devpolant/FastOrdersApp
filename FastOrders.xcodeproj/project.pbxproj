@@ -19,6 +19,9 @@
 		14CC2AF01DF436F700BBF5B3 /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC2AEF1DF436F700BBF5B3 /* RegistrationRouter.swift */; };
 		14CC2AF31DF4371600BBF5B3 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC2AF21DF4371600BBF5B3 /* RootRouter.swift */; };
 		14CC2AF51DF4375400BBF5B3 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC2AF41DF4375400BBF5B3 /* Router.swift */; };
+		14DE0B1C1DF46511008439D5 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DE0B1B1DF46511008439D5 /* ServiceManager.swift */; };
+		14DE0B201DF470FB008439D5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DE0B1F1DF470FB008439D5 /* Constants.swift */; };
+		33390E958ABFA27D4B6AF878 /* Pods_FastOrders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73021F67CE8DBCEE799C7D2B /* Pods_FastOrders.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,11 @@
 		14CC2AEF1DF436F700BBF5B3 /* RegistrationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationRouter.swift; path = Modules/Auth/Registration/Route/RegistrationRouter.swift; sourceTree = "<group>"; };
 		14CC2AF21DF4371600BBF5B3 /* RootRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		14CC2AF41DF4375400BBF5B3 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		14DE0B1B1DF46511008439D5 /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceManager.swift; path = Models/Managers/ServiceManager.swift; sourceTree = "<group>"; };
+		14DE0B1F1DF470FB008439D5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utils/Constants.swift; sourceTree = "<group>"; };
+		6A6B43FE74D127EE80531D30 /* Pods-FastOrders.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastOrders.release.xcconfig"; path = "Pods/Target Support Files/Pods-FastOrders/Pods-FastOrders.release.xcconfig"; sourceTree = "<group>"; };
+		73021F67CE8DBCEE799C7D2B /* Pods_FastOrders.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FastOrders.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECB29EF4A914B9DC7234A1D0 /* Pods-FastOrders.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastOrders.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FastOrders/Pods-FastOrders.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33390E958ABFA27D4B6AF878 /* Pods_FastOrders.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +63,8 @@
 			children = (
 				14CC2AC91DF4352200BBF5B3 /* FastOrders */,
 				14CC2AC81DF4352200BBF5B3 /* Products */,
+				9F72D79B30C2359A77309AEF /* Pods */,
+				3FDF14C05018F9B52291A159 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,7 +86,9 @@
 				14CC2AD11DF4352200BBF5B3 /* Assets.xcassets */,
 				14CC2AD31DF4352200BBF5B3 /* LaunchScreen.storyboard */,
 				14CC2AD61DF4352200BBF5B3 /* Info.plist */,
+				14DE0B1D1DF46519008439D5 /* Models */,
 				14CC2ADE1DF435C600BBF5B3 /* Modules */,
+				14DE0B1F1DF470FB008439D5 /* Constants.swift */,
 			);
 			path = FastOrders;
 			sourceTree = "<group>";
@@ -165,6 +178,39 @@
 			name = Route;
 			sourceTree = "<group>";
 		};
+		14DE0B1D1DF46519008439D5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				14DE0B1E1DF46520008439D5 /* Managers */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		14DE0B1E1DF46520008439D5 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				14DE0B1B1DF46511008439D5 /* ServiceManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		3FDF14C05018F9B52291A159 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73021F67CE8DBCEE799C7D2B /* Pods_FastOrders.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9F72D79B30C2359A77309AEF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ECB29EF4A914B9DC7234A1D0 /* Pods-FastOrders.debug.xcconfig */,
+				6A6B43FE74D127EE80531D30 /* Pods-FastOrders.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -172,9 +218,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14CC2AD91DF4352200BBF5B3 /* Build configuration list for PBXNativeTarget "FastOrders" */;
 			buildPhases = (
+				85EACEB35D43E198600E1C48 /* [CP] Check Pods Manifest.lock */,
 				14CC2AC31DF4352200BBF5B3 /* Sources */,
 				14CC2AC41DF4352200BBF5B3 /* Frameworks */,
 				14CC2AC51DF4352200BBF5B3 /* Resources */,
+				0D3418EA3885591AC594F82E /* [CP] Embed Pods Frameworks */,
+				972C6C98EFEB7DF10A7F9758 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,12 +281,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0D3418EA3885591AC594F82E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FastOrders/Pods-FastOrders-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85EACEB35D43E198600E1C48 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		972C6C98EFEB7DF10A7F9758 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FastOrders/Pods-FastOrders-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		14CC2AC31DF4352200BBF5B3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				14CC2AE91DF4368000BBF5B3 /* RegistrationViewController.swift in Sources */,
+				14DE0B201DF470FB008439D5 /* Constants.swift in Sources */,
 				14CC2AF51DF4375400BBF5B3 /* Router.swift in Sources */,
 				14CC2AE31DF4360F00BBF5B3 /* LoginInteractor.swift in Sources */,
 				14CC2ADD1DF435C100BBF5B3 /* LoginViewController.swift in Sources */,
@@ -246,6 +344,7 @@
 				14CC2AE61DF4364600BBF5B3 /* LoginRouter.swift in Sources */,
 				14CC2ACB1DF4352200BBF5B3 /* AppDelegate.swift in Sources */,
 				14CC2AF01DF436F700BBF5B3 /* RegistrationRouter.swift in Sources */,
+				14DE0B1C1DF46511008439D5 /* ServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,11 +465,13 @@
 		};
 		14CC2ADA1DF4352200BBF5B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECB29EF4A914B9DC7234A1D0 /* Pods-FastOrders.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FastOrders/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.polant.FastOrders;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -379,11 +480,13 @@
 		};
 		14CC2ADB1DF4352200BBF5B3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A6B43FE74D127EE80531D30 /* Pods-FastOrders.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FastOrders/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.polant.FastOrders;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
