@@ -29,7 +29,13 @@ class LoginRouter: Router {
     
     func presentMapViewController() {
         
+        let contentStoryboard = UIStoryboard(name: "Content", bundle: nil)
+        
+        let initialVC = contentStoryboard.instantiateInitialViewController()!
+        
+        viewController?.present(initialVC, animated: true, completion: nil)
     }
+
     
     
     //MARK: - Segue
