@@ -21,6 +21,8 @@
 		14CC2AF51DF4375400BBF5B3 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC2AF41DF4375400BBF5B3 /* Router.swift */; };
 		14DE0B1C1DF46511008439D5 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DE0B1B1DF46511008439D5 /* ServiceManager.swift */; };
 		14DE0B201DF470FB008439D5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DE0B1F1DF470FB008439D5 /* Constants.swift */; };
+		14DE0B231DF48AFB008439D5 /* Content.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14DE0B211DF48AFB008439D5 /* Content.storyboard */; };
+		14DE0B251DF48B76008439D5 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DE0B241DF48B76008439D5 /* KeyboardManager.swift */; };
 		33390E958ABFA27D4B6AF878 /* Pods_FastOrders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73021F67CE8DBCEE799C7D2B /* Pods_FastOrders.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		14CC2AF41DF4375400BBF5B3 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		14DE0B1B1DF46511008439D5 /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceManager.swift; path = Models/Managers/ServiceManager.swift; sourceTree = "<group>"; };
 		14DE0B1F1DF470FB008439D5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utils/Constants.swift; sourceTree = "<group>"; };
+		14DE0B221DF48AFB008439D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Content.storyboard; sourceTree = "<group>"; };
+		14DE0B241DF48B76008439D5 /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyboardManager.swift; path = Models/Managers/KeyboardManager.swift; sourceTree = "<group>"; };
 		6A6B43FE74D127EE80531D30 /* Pods-FastOrders.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastOrders.release.xcconfig"; path = "Pods/Target Support Files/Pods-FastOrders/Pods-FastOrders.release.xcconfig"; sourceTree = "<group>"; };
 		73021F67CE8DBCEE799C7D2B /* Pods_FastOrders.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FastOrders.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB29EF4A914B9DC7234A1D0 /* Pods-FastOrders.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastOrders.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FastOrders/Pods-FastOrders.debug.xcconfig"; sourceTree = "<group>"; };
@@ -83,6 +87,7 @@
 				14CC2AF21DF4371600BBF5B3 /* RootRouter.swift */,
 				14CC2AF41DF4375400BBF5B3 /* Router.swift */,
 				14CC2ACE1DF4352200BBF5B3 /* Main.storyboard */,
+				14DE0B211DF48AFB008439D5 /* Content.storyboard */,
 				14CC2AD11DF4352200BBF5B3 /* Assets.xcassets */,
 				14CC2AD31DF4352200BBF5B3 /* LaunchScreen.storyboard */,
 				14CC2AD61DF4352200BBF5B3 /* Info.plist */,
@@ -189,6 +194,7 @@
 		14DE0B1E1DF46520008439D5 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				14DE0B241DF48B76008439D5 /* KeyboardManager.swift */,
 				14DE0B1B1DF46511008439D5 /* ServiceManager.swift */,
 			);
 			name = Managers;
@@ -273,6 +279,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14DE0B231DF48AFB008439D5 /* Content.storyboard in Resources */,
 				14CC2AD51DF4352200BBF5B3 /* LaunchScreen.storyboard in Resources */,
 				14CC2AD21DF4352200BBF5B3 /* Assets.xcassets in Resources */,
 				14CC2AD01DF4352200BBF5B3 /* Main.storyboard in Resources */,
@@ -342,6 +349,7 @@
 				14CC2AF31DF4371600BBF5B3 /* RootRouter.swift in Sources */,
 				14CC2AED1DF436C700BBF5B3 /* RegistrationInteractor.swift in Sources */,
 				14CC2AE61DF4364600BBF5B3 /* LoginRouter.swift in Sources */,
+				14DE0B251DF48B76008439D5 /* KeyboardManager.swift in Sources */,
 				14CC2ACB1DF4352200BBF5B3 /* AppDelegate.swift in Sources */,
 				14CC2AF01DF436F700BBF5B3 /* RegistrationRouter.swift in Sources */,
 				14DE0B1C1DF46511008439D5 /* ServiceManager.swift in Sources */,
@@ -365,6 +373,14 @@
 				14CC2AD41DF4352200BBF5B3 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		14DE0B211DF48AFB008439D5 /* Content.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14DE0B221DF48AFB008439D5 /* Base */,
+			);
+			name = Content.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

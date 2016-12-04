@@ -21,6 +21,9 @@ class RegistrationViewController: UIViewController {
     
     @IBOutlet weak var signUpButton: UIButton!
     
+    var textFields: [UITextField]!
+    var keyboardManager: KeyboardManager!
+    
     var interactor: RegistrationInteractor!
     var router: RegistrationRouter!
     
@@ -30,7 +33,22 @@ class RegistrationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        textFields = [usernameTextField, loginTextField, passwordTextField, confirmPasswordTextField]
+        keyboardManager = KeyboardManager(rootView: view, scrollView: scrollView, activeView: nil)
+        
         setupUI()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        keyboardManager.registerForKeyboardNotifications()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        keyboardManager.unregisterForKeyboardNotifications()
     }
     
     
@@ -101,5 +119,25 @@ class RegistrationViewController: UIViewController {
     func updateButtons(enabled: Bool) {
         signUpButton.isEnabled = enabled
     }
-
+    
+    
+    //MARK: - Delegates
+    
+    //MARK: UITextFieldDelegate
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        keyboardManager.activeView = textField
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        let index = textFields.index(of: textField)!
+        if index < textFields.count - 1{
+            keyboardManager.activeView = textFields[index + 1]
+        } else {
+            keyboardManager.activeView = nil
+        }
+        
+        return true
+    }
 }

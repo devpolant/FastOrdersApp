@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -19,6 +19,8 @@ class LoginViewController: UIViewController {
 
     @IBOutlet var buttons: [UIButton]!
     
+    var textFields: [UITextField]!
+    var keyboardManager: KeyboardManager!
     
     var interactor: LoginInteractor!
     var router: LoginRouter!
@@ -29,7 +31,21 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        textFields = [loginTextField, passwordTextField]
+        keyboardManager = KeyboardManager(rootView: view, scrollView: scrollView, activeView: nil)
         setupUI()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        keyboardManager.registerForKeyboardNotifications()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        keyboardManager.unregisterForKeyboardNotifications()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -90,4 +106,24 @@ class LoginViewController: UIViewController {
         }
     }
     
+    
+    //MARK: - Delegates
+    
+    //MARK: UITextFieldDelegate
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        keyboardManager.activeView = textField
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        let index = textFields.index(of: textField)!
+        if index < textFields.count - 1{
+            keyboardManager.activeView = textFields[index + 1]
+        } else {
+            keyboardManager.activeView = nil
+        }
+        
+        return true
+    }
 }
