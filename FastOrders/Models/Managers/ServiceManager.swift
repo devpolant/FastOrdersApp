@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 
 typealias AuthCompletionHandler = (_ success: Bool, _ message: String) -> Void
+typealias PlacesCompletionHandler = (_ success: Bool, _ message: String?, _ merchants: [Merchant]?) -> Void
 
 class ServiceManager {
     
@@ -63,10 +64,36 @@ class ServiceManager {
         }
     }
     
+    
+    //MARK: - Places
+    
+    func loadPlaces(at location: Location, in radius: Double, completion: @escaping PlacesCompletionHandler) {
+        
+        Alamofire
+            .request(PlacesRouter.inRadius(location: location, radius: radius, token: self.accessToken!))
+            .responseJSON { (dataResponse) in
+                
+                guard let response = dataResponse.result.value as? [String: Any] else {
+                    completion(false, "Something went wrong", nil)
+                    return
+                }
+                
+                let success = !(response["error"] as! Bool)
+                
+                var merchants = [Merchant]()
+                
+                for jsonObject in response["merchants"] as! [[String: Any]] {
+                    let merchant = Merchant(from: jsonObject)
+                    merchants.append(merchant)
+                }
+                completion(success, nil, merchants)
+        }
+    }
+    
 }
 
 
-//MARK: - Routing
+//MARK: - Auth Routing
 enum AuthRouter: URLRequestConvertible {
     
     private static let baseURLString = "\(Constants.baseApiServicePath)/customer/auth"
@@ -75,7 +102,7 @@ enum AuthRouter: URLRequestConvertible {
     case registerUser(name: String, login: String, password: String)
     
     
-    var method: HTTPMethod {
+    private var method: HTTPMethod {
         switch self {
         case .loginUser:
             return .post
@@ -84,7 +111,7 @@ enum AuthRouter: URLRequestConvertible {
         }
     }
     
-    var path: String {
+    private var path: String {
         switch self {
         case .loginUser:
             return "/login"
@@ -116,31 +143,84 @@ enum AuthRouter: URLRequestConvertible {
     }
 }
 
-
-//class AccessTokenAdapter: RequestAdapter {
-//    
-//    private let accessToken: String?
-//    
-//    init(accessToken: String?) {
-//        self.accessToken = accessToken
-//    }
-//    
-//    func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
-//        
-//
-//        var urlRequest = urlRequest
-//
-//        guard let token = accessToken else { return urlRequest }
-//        
-//        let needsToken = !urlRequest.url!.pathComponents.contains { pathComponent in
-//            return pathComponent == "login" || pathComponent == "register"
-//        }
-//        
-//        if needsToken {
-//            urlRequest.setValue("Bearer " + token, forHTTPHeaderField: "Authorization")
-//        }
-//        
-//        return urlRequest
-//    }
-//}
+//MARK: - Places Routing
+enum PlacesRouter: URLRequestConvertible {
+    
+    private static let baseURLString = "\(Constants.baseApiServicePath)/customer/places"
+    
+    case all(token: String)
+    case inRadius(location: Location, radius: Double, token: String)
+    case info(merchantId: String, token: String)
+    case menuCategories(merchantId: String, token: String)
+    
+    
+    private var method: HTTPMethod {
+        switch self {
+        case .all:      fallthrough
+        case .inRadius: fallthrough
+        case .info:     fallthrough
+        case .menuCategories:
+            return .post
+        }
+    }
+    
+    private var path: String {
+        switch self {
+        case .all:
+            return "/all"
+        case .inRadius:
+            return "/radius"
+        case let .info(merchantId, _):
+            return "/info/\(merchantId)"
+        case let .menuCategories(merchantId, _):
+            return "/menu/\(merchantId)"
+        }
+    }
+    
+    private var token: String {
+        switch self {
+        case let .all(token):
+            return token
+        case let .inRadius(_, _, token):
+            return token
+        case let .info(_, token):
+            return token
+        case let .menuCategories(_, token):
+            return token
+        }
+    }
+    
+    
+    //MARK: URLRequestConvertible
+    
+    func asURLRequest() throws -> URLRequest {
+        
+        let url = try PlacesRouter.baseURLString.asURL()
+        
+        var urlRequest = URLRequest(url: url.appendingPathComponent(path))
+        urlRequest.httpMethod = method.rawValue
+        
+        urlRequest.setValue("Bearer " + token, forHTTPHeaderField: "Authorization")
+        
+        switch self {
+        case .all:
+            break
+        case let .inRadius(location, radius, _):
+            let params = ["radius": radius,
+                          "latitude": location.latitude,
+                          "longitude": location.longitude]
+            
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
+            
+        case let .info(merchantId, _):
+            let params = ["merchant_id": merchantId]
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
+            
+        case let .menuCategories(merchantId, _):
+            let params = ["merchant_id": merchantId]
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
+        }
+        return urlRequest
+    }
+}
 
