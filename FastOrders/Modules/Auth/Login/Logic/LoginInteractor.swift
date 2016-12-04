@@ -7,3 +7,18 @@
 //
 
 import Foundation
+
+class LoginInteractor {
+    
+    weak var viewController: LoginViewController?
+    
+    //MARK: - Actions
+    
+    func actionLogin() {
+        
+    }
+    
+    func actionSignUp() {
+        viewController?.router.presentRegistrationViewController()
+    }
+}

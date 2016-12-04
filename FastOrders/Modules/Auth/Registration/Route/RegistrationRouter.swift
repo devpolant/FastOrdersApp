@@ -11,9 +11,9 @@ import UIKit
 
 class RegistrationRouter: Router {
     
-    var viewController: RegistrationViewController!
+    weak var viewController: RegistrationViewController?
     
-    func contentViewController() -> UIViewController {
+    func contentViewController() -> UIViewController? {
         return viewController
     }
 }

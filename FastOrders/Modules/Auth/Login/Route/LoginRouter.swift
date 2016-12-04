@@ -11,9 +11,19 @@ import UIKit
 
 class LoginRouter: Router {
     
-    var viewController: LoginViewController!
+    weak var viewController: LoginViewController?
     
-    func contentViewController() -> UIViewController {
+    
+    //MARK: - Parent
+    
+    func contentViewController() -> UIViewController? {
         return viewController
+    }
+    
+    
+    //MARK: - Actions
+    
+    func presentRegistrationViewController() {
+        viewController?.performSegue(withIdentifier: "showRegistration", sender: nil)
     }
 }

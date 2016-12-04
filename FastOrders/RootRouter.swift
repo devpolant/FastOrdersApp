@@ -21,9 +21,18 @@ class RootRouter {
         
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let navigation = mainStoryboard.instantiateViewController(withIdentifier: "RootNavigationController") as! UINavigationController
+        let loginVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         
-        window?.rootViewController = navigation
+        //Setup VIPER
+        loginVC.interactor = LoginInteractor()
+        loginVC.interactor.viewController = loginVC
+        
+        loginVC.router = LoginRouter()
+        loginVC.router.viewController = loginVC
+        
+        let navigationVC = UINavigationController(rootViewController: loginVC)
+        
+        window?.rootViewController = navigationVC
         window?.makeKeyAndVisible()
         
         return true

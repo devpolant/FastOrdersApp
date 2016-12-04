@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+class RegistrationInteractor {
+    
+    weak var viewController: RegistrationViewController?
+    
+    
+}

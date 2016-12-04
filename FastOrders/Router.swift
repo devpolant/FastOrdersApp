@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol Router {
-    func contentViewController() -> UIViewController
+    func contentViewController() -> UIViewController?
 }
 
 //MARK: - Actions
@@ -18,7 +18,7 @@ extension Router {
     
     func dismiss(animated: Bool) {
         
-        let contentVC = contentViewController()
+        guard let contentVC = contentViewController() else { return }
         
         if let navigationController = contentVC.navigationController {
             navigationController.popViewController(animated: animated)

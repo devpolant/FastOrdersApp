@@ -17,6 +17,9 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var errorLabel: UILabel!
 
+    var interactor: LoginInteractor!
+    var router: LoginRouter!
+    
     
     //MARK: - Life Cycle
     
@@ -28,10 +31,26 @@ class LoginViewController: UIViewController {
     //MARK: - Interactor
     
     @IBAction func actionDidTapLoginButton(_ sender: Any) {
-        
+        interactor.actionLogin()
     }
     
     @IBAction func actionDidTapSignUpButton(_ sender: Any) {
-        
+        interactor.actionSignUp()
     }
+    
+    
+    //MARK: - Presenter
+    
+    func getLogin() -> String {
+        return loginTextField.text ?? ""
+    }
+    
+    func getPassword() -> String {
+        return passwordTextField.text ?? ""
+    }
+    
+    func setErrorText(_ errorText: String) {
+        errorLabel.text = "*\(errorText)"
+    }
+    
 }
