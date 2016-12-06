@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		147C32301DF75E6F0005B3D4 /* MerchantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C322F1DF75E6F0005B3D4 /* MerchantTableViewCell.swift */; };
+		14BE2D8F1DF696670050FA29 /* MerchantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BE2D8E1DF696670050FA29 /* MerchantsViewController.swift */; };
+		14BE2D931DF696A40050FA29 /* MerchantsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BE2D921DF696A40050FA29 /* MerchantsInteractor.swift */; };
+		14BE2D951DF696DB0050FA29 /* MerchantsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BE2D941DF696DB0050FA29 /* MerchantsRouter.swift */; };
+		14BE2D971DF69DE20050FA29 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BE2D961DF69DE20050FA29 /* UIViewController+Alert.swift */; };
 		14CC2ACB1DF4352200BBF5B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC2ACA1DF4352200BBF5B3 /* AppDelegate.swift */; };
 		14CC2AD01DF4352200BBF5B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14CC2ACE1DF4352200BBF5B3 /* Main.storyboard */; };
 		14CC2AD21DF4352200BBF5B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14CC2AD11DF4352200BBF5B3 /* Assets.xcassets */; };
@@ -32,6 +37,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		147C322F1DF75E6F0005B3D4 /* MerchantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MerchantTableViewCell.swift; path = Views/Cells/Table/MerchantTableViewCell.swift; sourceTree = "<group>"; };
+		14BE2D8E1DF696670050FA29 /* MerchantsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MerchantsViewController.swift; path = Modules/Places/Merchants/View/MerchantsViewController.swift; sourceTree = "<group>"; };
+		14BE2D921DF696A40050FA29 /* MerchantsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MerchantsInteractor.swift; path = Modules/Places/Merchants/Logic/MerchantsInteractor.swift; sourceTree = "<group>"; };
+		14BE2D941DF696DB0050FA29 /* MerchantsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MerchantsRouter.swift; path = Modules/Places/Merchants/Route/MerchantsRouter.swift; sourceTree = "<group>"; };
+		14BE2D961DF69DE20050FA29 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Alert.swift"; path = "Utils/UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		14CC2AC71DF4352200BBF5B3 /* FastOrders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastOrders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14CC2ACA1DF4352200BBF5B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14CC2ACF1DF4352200BBF5B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,6 +82,81 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		147C32311DF75E730005B3D4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				147C32321DF75E790005B3D4 /* Cells */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		147C32321DF75E790005B3D4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				147C32331DF75E7F0005B3D4 /* Table */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		147C32331DF75E7F0005B3D4 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				147C322F1DF75E6F0005B3D4 /* MerchantTableViewCell.swift */,
+			);
+			name = Table;
+			sourceTree = "<group>";
+		};
+		14BE2D8B1DF695D90050FA29 /* Places */ = {
+			isa = PBXGroup;
+			children = (
+				14BE2D8C1DF695EC0050FA29 /* Merchants */,
+			);
+			name = Places;
+			sourceTree = "<group>";
+		};
+		14BE2D8C1DF695EC0050FA29 /* Merchants */ = {
+			isa = PBXGroup;
+			children = (
+				14BE2D8D1DF695FB0050FA29 /* View */,
+				14BE2D901DF6966E0050FA29 /* Logic */,
+				14BE2D911DF696740050FA29 /* Route */,
+			);
+			name = Merchants;
+			sourceTree = "<group>";
+		};
+		14BE2D8D1DF695FB0050FA29 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				14BE2D8E1DF696670050FA29 /* MerchantsViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		14BE2D901DF6966E0050FA29 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				14BE2D921DF696A40050FA29 /* MerchantsInteractor.swift */,
+			);
+			name = Logic;
+			sourceTree = "<group>";
+		};
+		14BE2D911DF696740050FA29 /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				14BE2D941DF696DB0050FA29 /* MerchantsRouter.swift */,
+			);
+			name = Route;
+			sourceTree = "<group>";
+		};
+		14BE2D981DF69DEA0050FA29 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				14DE0B1F1DF470FB008439D5 /* Constants.swift */,
+				14BE2D961DF69DE20050FA29 /* UIViewController+Alert.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		14CC2ABE1DF4352200BBF5B3 = {
 			isa = PBXGroup;
 			children = (
@@ -101,9 +186,10 @@
 				14CC2AD11DF4352200BBF5B3 /* Assets.xcassets */,
 				14CC2AD31DF4352200BBF5B3 /* LaunchScreen.storyboard */,
 				14CC2AD61DF4352200BBF5B3 /* Info.plist */,
+				14BE2D981DF69DEA0050FA29 /* Utils */,
+				147C32311DF75E730005B3D4 /* Views */,
 				14DE0B1D1DF46519008439D5 /* Models */,
 				14CC2ADE1DF435C600BBF5B3 /* Modules */,
-				14DE0B1F1DF470FB008439D5 /* Constants.swift */,
 			);
 			path = FastOrders;
 			sourceTree = "<group>";
@@ -113,6 +199,7 @@
 			children = (
 				14CC2ADF1DF435CD00BBF5B3 /* Auth */,
 				14DE0B281DF4935E008439D5 /* Map */,
+				14BE2D8B1DF695D90050FA29 /* Places */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -398,8 +485,12 @@
 			files = (
 				14CC2AE91DF4368000BBF5B3 /* RegistrationViewController.swift in Sources */,
 				14DE0B201DF470FB008439D5 /* Constants.swift in Sources */,
+				14BE2D951DF696DB0050FA29 /* MerchantsRouter.swift in Sources */,
+				14BE2D931DF696A40050FA29 /* MerchantsInteractor.swift in Sources */,
 				14DE0B301DF493C8008439D5 /* MapRouter.swift in Sources */,
 				14CC2AF51DF4375400BBF5B3 /* Router.swift in Sources */,
+				14BE2D971DF69DE20050FA29 /* UIViewController+Alert.swift in Sources */,
+				147C32301DF75E6F0005B3D4 /* MerchantTableViewCell.swift in Sources */,
 				14CC2AE31DF4360F00BBF5B3 /* LoginInteractor.swift in Sources */,
 				14DE0B351DF49994008439D5 /* Location.swift in Sources */,
 				14CC2ADD1DF435C100BBF5B3 /* LoginViewController.swift in Sources */,
@@ -410,6 +501,7 @@
 				14CC2AE61DF4364600BBF5B3 /* LoginRouter.swift in Sources */,
 				14DE0B321DF4992F008439D5 /* Merchant.swift in Sources */,
 				14DE0B251DF48B76008439D5 /* KeyboardManager.swift in Sources */,
+				14BE2D8F1DF696670050FA29 /* MerchantsViewController.swift in Sources */,
 				14CC2ACB1DF4352200BBF5B3 /* AppDelegate.swift in Sources */,
 				14CC2AF01DF436F700BBF5B3 /* RegistrationRouter.swift in Sources */,
 				14DE0B1C1DF46511008439D5 /* ServiceManager.swift in Sources */,

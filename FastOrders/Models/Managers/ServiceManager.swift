@@ -67,6 +67,30 @@ class ServiceManager {
     
     //MARK: - Places
     
+    func loadAllPlaces(completion: @escaping PlacesCompletionHandler) {
+        
+        Alamofire
+            .request(PlacesRouter.all(token: self.accessToken!))
+            .responseJSON { (dataResponse) in
+                
+                guard let response = dataResponse.result.value as? [String: Any] else {
+                    completion(false, "Something went wrong", nil)
+                    return
+                }
+                
+                let success = !(response["error"] as! Bool)
+                let message = response["message"] as? String
+                
+                var merchants = [Merchant]()
+                
+                for jsonObject in response["merchants"] as! [[String: Any]] {
+                    let merchant = Merchant(from: jsonObject)
+                    merchants.append(merchant)
+                }
+                completion(success, message, merchants)
+        }
+    }
+    
     func loadPlaces(at location: Location, in radius: Double, completion: @escaping PlacesCompletionHandler) {
         
         Alamofire
@@ -79,6 +103,7 @@ class ServiceManager {
                 }
                 
                 let success = !(response["error"] as! Bool)
+                let message = response["message"] as? String
                 
                 var merchants = [Merchant]()
                 
@@ -86,7 +111,7 @@ class ServiceManager {
                     let merchant = Merchant(from: jsonObject)
                     merchants.append(merchant)
                 }
-                completion(success, nil, merchants)
+                completion(success, message, merchants)
         }
     }
     
