@@ -41,9 +41,11 @@ final class Merchant: NSObject, MKAnnotation {
                                      longitude: json["longitude"] as! Double),
                   visitorsCount: json["visitors_count"] as! Int?)
     }
-    
-    
-    //MARK: - MKAnnotation
+}
+
+
+//MARK: - MKAnnotation
+extension Merchant {
     
     var coordinate: CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
