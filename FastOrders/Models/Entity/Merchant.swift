@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-final class Merchant: NSObject, MKAnnotation {
+final class Merchant: NSObject {
     
     var id: String
     var businessName: String
@@ -45,7 +45,7 @@ final class Merchant: NSObject, MKAnnotation {
 
 
 //MARK: - MKAnnotation
-extension Merchant {
+extension Merchant: MKAnnotation {
     
     var coordinate: CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)

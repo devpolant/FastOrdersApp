@@ -11,6 +11,8 @@ import Alamofire
 
 typealias AuthCompletionHandler = (_ success: Bool, _ message: String) -> Void
 typealias PlacesCompletionHandler = (_ success: Bool, _ message: String?, _ merchants: [Merchant]?) -> Void
+typealias MenuCategoriesCompletionHandler = (_ success: Bool, _ message: String?, _ merchants: [MenuCategory]?) -> Void
+typealias MenuItemsCompletionHandler = (_ success: Bool, _ message: String?, _ merchants: [MenuItem]?) -> Void
 
 class ServiceManager {
     
@@ -115,6 +117,55 @@ class ServiceManager {
         }
     }
     
+    
+    func loadMenuCategories(for merchant: Merchant, completion: @escaping MenuCategoriesCompletionHandler) {
+        
+        Alamofire
+            .request(PlacesRouter.menuCategories(merchantId: merchant.id, token: self.accessToken!))
+            .responseJSON { (dataResponse) in
+                
+                guard let response = dataResponse.result.value as? [String: Any] else {
+                    completion(false, "Something went wrong", nil)
+                    return
+                }
+                
+                let success = !(response["error"] as! Bool)
+                let message = response["message"] as? String
+                
+                var categories = [MenuCategory]()
+                
+                for jsonObject in response["menu_categories"] as! [[String: Any]] {
+                    let category = MenuCategory(from: jsonObject)
+                    categories.append(category)
+                }
+                completion(success, message, categories)
+        }
+    }
+    
+    func loadMenuItems(for category: MenuCategory, completion: @escaping MenuItemsCompletionHandler) {
+        
+        Alamofire
+            .request(PlacesRouter.menuItems(categoryId: category.id, token: self.accessToken!))
+            .responseJSON { (dataResponse) in
+                
+                guard let response = dataResponse.result.value as? [String: Any] else {
+                    completion(false, "Something went wrong", nil)
+                    return
+                }
+                
+                let success = !(response["error"] as! Bool)
+                let message = response["message"] as? String
+                
+                var items = [MenuItem]()
+                
+                for jsonObject in response["menu_items"] as! [[String: Any]] {
+                    let menuItem = MenuItem(from: jsonObject)
+                    items.append(menuItem)
+                }
+                completion(success, message, items)
+        }
+    }
+    
 }
 
 
@@ -168,6 +219,7 @@ enum AuthRouter: URLRequestConvertible {
     }
 }
 
+
 //MARK: - Places Routing
 enum PlacesRouter: URLRequestConvertible {
     
@@ -177,14 +229,16 @@ enum PlacesRouter: URLRequestConvertible {
     case inRadius(location: Location, radius: Double, token: String)
     case info(merchantId: String, token: String)
     case menuCategories(merchantId: String, token: String)
+    case menuItems(categoryId: String, token: String)
     
     
     private var method: HTTPMethod {
         switch self {
-        case .all:      fallthrough
-        case .inRadius: fallthrough
-        case .info:     fallthrough
-        case .menuCategories:
+        case .all:              fallthrough
+        case .inRadius:         fallthrough
+        case .info:             fallthrough
+        case .menuCategories:   fallthrough
+        case .menuItems:
             return .post
         }
     }
@@ -199,6 +253,8 @@ enum PlacesRouter: URLRequestConvertible {
             return "/info/\(merchantId)"
         case let .menuCategories(merchantId, _):
             return "/menu/\(merchantId)"
+        case let .menuItems(categoryId, _):
+            return "/items/\(categoryId)"
         }
     }
     
@@ -211,6 +267,8 @@ enum PlacesRouter: URLRequestConvertible {
         case let .info(_, token):
             return token
         case let .menuCategories(_, token):
+            return token
+        case let .menuItems(_, token):
             return token
         }
     }
@@ -244,7 +302,12 @@ enum PlacesRouter: URLRequestConvertible {
         case let .menuCategories(merchantId, _):
             let params = ["merchant_id": merchantId]
             urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
+    
+        case let .menuItems(categoryId, _):
+            let params = ["category_id": categoryId]
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
         }
+        
         return urlRequest
     }
 }

@@ -15,7 +15,12 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var tableView: UITableView!
     
-    fileprivate var menuCategories = [MenuCategory]()
+    fileprivate var menuCategories = [MenuCategory]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     var merchant: Merchant!
     
     
@@ -24,16 +29,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initVIPER()
-    }
-    
-    func initVIPER() {
-        
-        interactor = MenuInteractor()
-        interactor.viewController = self
-        
-        router = MenuRouter()
-        router.viewController = self
+        interactor.loadMenuCategories(for: merchant)
     }
     
     
@@ -58,7 +54,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func updateMenuCategories(_ menuCategories: [MenuCategory]) {
-        
+        self.menuCategories = menuCategories
     }
     
     

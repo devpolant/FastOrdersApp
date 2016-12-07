@@ -22,13 +22,13 @@ class MenuInteractor {
     
     //MARK: Networking
     
-//    func loadPlaces() {
-//        
-//        ServiceManager.shared.loadAllPlaces { [weak self] success, message, merchants in
-//            
-//            guard let merchants = merchants else { return }
-//            
-//            self?.viewController?.updateMerchants(merchants)
-//        }
-//    }
+    func loadMenuCategories(for merchant: Merchant) {
+        
+        ServiceManager.shared.loadMenuCategories(for: merchant) { [weak self] success, message, categories in
+            
+            guard let categories = categories else { return }
+            
+            self?.viewController?.updateMenuCategories(categories)
+        }
+    }
 }

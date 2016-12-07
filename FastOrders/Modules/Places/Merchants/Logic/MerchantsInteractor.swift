@@ -16,7 +16,7 @@ class MerchantsInteractor {
     //MARK: Actions
     
     func actionDidSelectMerchant(_ merchant: Merchant) {
-        
+        viewController?.router.presentMenuViewController(for: merchant)
     }
     
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1472FAF81DF8A33F00CD0C62 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1472FAF71DF8A33F00CD0C62 /* MenuItem.swift */; };
 		147C32301DF75E6F0005B3D4 /* MerchantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C322F1DF75E6F0005B3D4 /* MerchantTableViewCell.swift */; };
 		147C32351DF761220005B3D4 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C32341DF761220005B3D4 /* MenuViewController.swift */; };
 		147C323B1DF761760005B3D4 /* MenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C323A1DF761760005B3D4 /* MenuInteractor.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1472FAF71DF8A33F00CD0C62 /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuItem.swift; path = Models/Entity/MenuItem.swift; sourceTree = "<group>"; };
 		147C322F1DF75E6F0005B3D4 /* MerchantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MerchantTableViewCell.swift; path = Views/Cells/Table/MerchantTableViewCell.swift; sourceTree = "<group>"; };
 		147C32341DF761220005B3D4 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = Modules/Places/Menu/View/MenuViewController.swift; sourceTree = "<group>"; };
 		147C323A1DF761760005B3D4 /* MenuInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuInteractor.swift; path = Modules/Places/Menu/Logic/MenuInteractor.swift; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 			children = (
 				14DE0B311DF4992F008439D5 /* Merchant.swift */,
 				147C323E1DF762CF0005B3D4 /* MenuCategory.swift */,
+				1472FAF71DF8A33F00CD0C62 /* MenuItem.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				14CC2AE61DF4364600BBF5B3 /* LoginRouter.swift in Sources */,
 				14DE0B321DF4992F008439D5 /* Merchant.swift in Sources */,
 				14DE0B251DF48B76008439D5 /* KeyboardManager.swift in Sources */,
+				1472FAF81DF8A33F00CD0C62 /* MenuItem.swift in Sources */,
 				14BE2D8F1DF696670050FA29 /* MerchantsViewController.swift in Sources */,
 				147C32411DF764650005B3D4 /* MenuCategoryTableViewCell.swift in Sources */,
 				14CC2ACB1DF4352200BBF5B3 /* AppDelegate.swift in Sources */,
