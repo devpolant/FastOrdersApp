@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import PKHUD
 
 class MenuInteractor {
     
@@ -24,7 +25,12 @@ class MenuInteractor {
     
     func loadMenuCategories(for merchant: Merchant) {
         
+        PKHUD.sharedHUD.contentView = PKHUDProgressView(title: "Menu", subtitle: "Loading...")
+        PKHUD.sharedHUD.show()
+        
         ServiceManager.shared.loadMenuCategories(for: merchant) { [weak self] success, message, categories in
+            
+            PKHUD.sharedHUD.hide()
             
             guard let categories = categories else { return }
             

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import PKHUD
 
 class MerchantsInteractor {
     
@@ -24,7 +25,12 @@ class MerchantsInteractor {
     
     func loadPlaces() {
         
+        PKHUD.sharedHUD.contentView = PKHUDProgressView(title: "Places", subtitle: "Loading...")
+        PKHUD.sharedHUD.show()
+        
         ServiceManager.shared.loadAllPlaces { [weak self] success, message, merchants in
+            
+            PKHUD.sharedHUD.hide()
             
             guard let merchants = merchants else { return }
             
