@@ -39,7 +39,7 @@ final class Merchant: NSObject {
                   address: json["address"] as! String,
                   location: Location(latitude: json["latitude"] as! Double,
                                      longitude: json["longitude"] as! Double),
-                  visitorsCount: json["visitors_count"] as! Int?)
+                  visitorsCount: json["visitors_count"] as? Int)
     }
 }
 
@@ -56,6 +56,11 @@ extension Merchant: MKAnnotation {
     }
     
     var subtitle: String? {
-        return "\(city), \(address)"
+        
+        if let visitorsCount = visitorsCount {
+            return "\(visitorsCount) visitors at now"
+        } else {
+            return "Visitors quantity isn't available"
+        }
     }
 }
