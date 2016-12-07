@@ -84,6 +84,16 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         pin?.image = UIImage(named: "ic_map_pin_big")!
         pin?.layer.anchorPoint = CGPoint(x: CGFloat(0.5), y: CGFloat(1.0))
         
+        
+        //Left
+        
+        let imageView = UIImageView(frame: CGRect(origin: CGPoint.zero,
+                                                  size: CGSize(width: 30, height: 30)))
+        imageView.image = UIImage(named: "watch")
+        
+        pin?.leftCalloutAccessoryView = imageView
+        
+        
         //Right
         
         pin?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
@@ -112,7 +122,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     public func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
     
-        
+        let merchant = view.annotation as! Merchant
+        interactor.actionDidSelectPlaceAnnotation(for: merchant)
     }
     
 }

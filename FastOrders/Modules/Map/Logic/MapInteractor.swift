@@ -23,6 +23,10 @@ class MapInteractor {
         loadVisiblePlaces(for: mapCenterLocation, in: visibleRadius)
     }
     
+    func actionDidSelectPlaceAnnotation(for merchant: Merchant) {
+        viewController?.router.presentMenuViewController(for: merchant)
+    }
+    
     
     //MARK: MapView Calculations
     
