@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1472FAF81DF8A33F00CD0C62 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1472FAF71DF8A33F00CD0C62 /* MenuItem.swift */; };
+		1472FAFA1DF8A8F900CD0C62 /* MenuItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1472FAF91DF8A8F900CD0C62 /* MenuItemsViewController.swift */; };
+		1472FAFE1DF8A92C00CD0C62 /* MenuItemsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1472FAFD1DF8A92C00CD0C62 /* MenuItemsInteractor.swift */; };
+		1472FB011DF8A95E00CD0C62 /* MenuItemsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1472FB001DF8A95E00CD0C62 /* MenuItemsRouter.swift */; };
+		1472FB061DF8ABCB00CD0C62 /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1472FB051DF8ABCB00CD0C62 /* MenuItemTableViewCell.swift */; };
 		147C32301DF75E6F0005B3D4 /* MerchantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C322F1DF75E6F0005B3D4 /* MerchantTableViewCell.swift */; };
 		147C32351DF761220005B3D4 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C32341DF761220005B3D4 /* MenuViewController.swift */; };
 		147C323B1DF761760005B3D4 /* MenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C323A1DF761760005B3D4 /* MenuInteractor.swift */; };
@@ -44,6 +48,10 @@
 
 /* Begin PBXFileReference section */
 		1472FAF71DF8A33F00CD0C62 /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuItem.swift; path = Models/Entity/MenuItem.swift; sourceTree = "<group>"; };
+		1472FAF91DF8A8F900CD0C62 /* MenuItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuItemsViewController.swift; path = Modules/Places/MenuItems/View/MenuItemsViewController.swift; sourceTree = "<group>"; };
+		1472FAFD1DF8A92C00CD0C62 /* MenuItemsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuItemsInteractor.swift; path = Modules/Places/MenuItems/Logic/MenuItemsInteractor.swift; sourceTree = "<group>"; };
+		1472FB001DF8A95E00CD0C62 /* MenuItemsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuItemsRouter.swift; path = Modules/Places/MenuItems/Route/MenuItemsRouter.swift; sourceTree = "<group>"; };
+		1472FB051DF8ABCB00CD0C62 /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuItemTableViewCell.swift; path = Views/Cells/Table/MenuItemTableViewCell.swift; sourceTree = "<group>"; };
 		147C322F1DF75E6F0005B3D4 /* MerchantTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MerchantTableViewCell.swift; path = Views/Cells/Table/MerchantTableViewCell.swift; sourceTree = "<group>"; };
 		147C32341DF761220005B3D4 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = Modules/Places/Menu/View/MenuViewController.swift; sourceTree = "<group>"; };
 		147C323A1DF761760005B3D4 /* MenuInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuInteractor.swift; path = Modules/Places/Menu/Logic/MenuInteractor.swift; sourceTree = "<group>"; };
@@ -94,6 +102,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1472FAFB1DF8A8FE00CD0C62 /* MenuItems */ = {
+			isa = PBXGroup;
+			children = (
+				1472FAFC1DF8A90A00CD0C62 /* View */,
+				1472FAFF1DF8A93000CD0C62 /* Logic */,
+				1472FB021DF8A96200CD0C62 /* Route */,
+			);
+			name = MenuItems;
+			sourceTree = "<group>";
+		};
+		1472FAFC1DF8A90A00CD0C62 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1472FAF91DF8A8F900CD0C62 /* MenuItemsViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		1472FAFF1DF8A93000CD0C62 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				1472FAFD1DF8A92C00CD0C62 /* MenuItemsInteractor.swift */,
+			);
+			name = Logic;
+			sourceTree = "<group>";
+		};
+		1472FB021DF8A96200CD0C62 /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				1472FB001DF8A95E00CD0C62 /* MenuItemsRouter.swift */,
+			);
+			name = Route;
+			sourceTree = "<group>";
+		};
 		147C32311DF75E730005B3D4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +157,7 @@
 			children = (
 				147C322F1DF75E6F0005B3D4 /* MerchantTableViewCell.swift */,
 				147C32401DF764650005B3D4 /* MenuCategoryTableViewCell.swift */,
+				1472FB051DF8ABCB00CD0C62 /* MenuItemTableViewCell.swift */,
 			);
 			name = Table;
 			sourceTree = "<group>";
@@ -158,6 +201,7 @@
 			children = (
 				14BE2D8C1DF695EC0050FA29 /* Merchants */,
 				147C32361DF761290005B3D4 /* Menu */,
+				1472FAFB1DF8A8FE00CD0C62 /* MenuItems */,
 			);
 			name = Places;
 			sourceTree = "<group>";
@@ -549,16 +593,20 @@
 				14DE0B2E1DF493B3008439D5 /* MapInteractor.swift in Sources */,
 				14CC2AF31DF4371600BBF5B3 /* RootRouter.swift in Sources */,
 				14DE0B271DF49357008439D5 /* MapViewController.swift in Sources */,
+				1472FAFE1DF8A92C00CD0C62 /* MenuItemsInteractor.swift in Sources */,
 				14CC2AED1DF436C700BBF5B3 /* RegistrationInteractor.swift in Sources */,
+				1472FB011DF8A95E00CD0C62 /* MenuItemsRouter.swift in Sources */,
 				147C323B1DF761760005B3D4 /* MenuInteractor.swift in Sources */,
 				14CC2AE61DF4364600BBF5B3 /* LoginRouter.swift in Sources */,
 				14DE0B321DF4992F008439D5 /* Merchant.swift in Sources */,
 				14DE0B251DF48B76008439D5 /* KeyboardManager.swift in Sources */,
 				1472FAF81DF8A33F00CD0C62 /* MenuItem.swift in Sources */,
+				1472FAFA1DF8A8F900CD0C62 /* MenuItemsViewController.swift in Sources */,
 				14BE2D8F1DF696670050FA29 /* MerchantsViewController.swift in Sources */,
 				147C32411DF764650005B3D4 /* MenuCategoryTableViewCell.swift in Sources */,
 				14CC2ACB1DF4352200BBF5B3 /* AppDelegate.swift in Sources */,
 				14CC2AF01DF436F700BBF5B3 /* RegistrationRouter.swift in Sources */,
+				1472FB061DF8ABCB00CD0C62 /* MenuItemTableViewCell.swift in Sources */,
 				14DE0B1C1DF46511008439D5 /* ServiceManager.swift in Sources */,
 				147C32351DF761220005B3D4 /* MenuViewController.swift in Sources */,
 			);

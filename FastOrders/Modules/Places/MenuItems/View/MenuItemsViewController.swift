@@ -1,71 +1,72 @@
 //
-//  MenuViewController.swift
+//  MenuItemsViewController.swift
 //  FastOrders
 //
-//  Created by Anton Poltoratskyi on 06.12.16.
+//  Created by Anton Poltoratskyi on 07.12.16.
 //  Copyright © 2016 Poltoratskyi Team. All rights reserved.
 //
 
 import UIKit
 
-class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MenuItemsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var interactor: MenuInteractor!
-    var router: MenuRouter!
+    var interactor: MenuItemsInteractor!
+    var router: MenuItemsRouter!
     
     @IBOutlet weak var tableView: UITableView!
     
-    fileprivate var menuCategories = [MenuCategory]()
+    fileprivate var menuItems = [MenuItem]()
     
-    var merchant: Merchant!
+    var category: MenuCategory!
     
     
     //MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        interactor.loadMenuCategories(for: merchant)
+
+        interactor.loadMenuItems(for: category)
     }
     
-    
+
     //MARK: - Presenter
     
     func cellForRow(at indexPath: IndexPath) -> UITableViewCell {
         
-        let reuseIdentifier = "categoryCell"
+        let reuseIdentifier = "menuItemCell"
         
-        let category = self.category(at: indexPath)
+        let menuItem = self.menuItem(at: indexPath)
         
-        var cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? MenuCategoryTableViewCell
+        var cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? MenuItemTableViewCell
         
         if cell == nil {
-            cell = MenuCategoryTableViewCell()
+            cell = MenuItemTableViewCell()
         }
-        cell?.categoryPhotoImageView.image = UIImage(named: "watch")
-        cell?.categoryNameLabel.text = category.name
-        cell?.categoryDescriptionLabel.text = category.description
+        cell?.menuItemPhotoImageView.image = UIImage(named: "watch")
+        cell?.menuItemNameLabel.text = menuItem.name
+        cell?.menuItemDescriptionLabel.text = menuItem.description
+        cell?.menuItemPriceLabel.text = "$\(menuItem.price)"
         
         return cell!
     }
     
-    func updateMenuCategories(_ menuCategories: [MenuCategory]) {
-        self.menuCategories = menuCategories
+    func updateMenuItems(_ menuItems: [MenuItem]) {
+        self.menuItems = menuItems
         tableView.reloadData()
     }
     
     
     //MARK: - Entity
     
-    func category(at indexPath: IndexPath) -> MenuCategory {
-        return menuCategories[indexPath.row]
+    func menuItem(at indexPath: IndexPath) -> MenuItem {
+        return menuItems[indexPath.row]
     }
     
     
     //MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menuCategories.count
+        return menuItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -84,7 +85,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let category = self.category(at: indexPath)
-        interactor.actionDidSelectMenuCategory(category)
+        let item = self.menuItem(at: indexPath)
+        interactor.actionDidSelectMenuItem(item)
     }
+
 }

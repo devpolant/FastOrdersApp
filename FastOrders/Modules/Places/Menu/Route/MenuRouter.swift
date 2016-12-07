@@ -18,4 +18,24 @@ class MenuRouter: Router {
     func contentViewController() -> UIViewController? {
         return viewController
     }
+    
+    
+    //MARK: - Routes
+    
+    func presentMenuItemsViewController(for category: MenuCategory) {
+        
+        let storyboard = UIStoryboard(name: "Content", bundle: nil)
+        
+        let menuVC = storyboard.instantiateViewController(withIdentifier: "MenuItemsViewController") as! MenuItemsViewController
+        
+        menuVC.interactor = MenuItemsInteractor()
+        menuVC.interactor.viewController = menuVC
+        
+        menuVC.router = MenuItemsRouter()
+        menuVC.router.viewController = menuVC
+        
+        menuVC.category = category
+        
+        viewController?.navigationController?.pushViewController(menuVC, animated: true)
+    }
 }

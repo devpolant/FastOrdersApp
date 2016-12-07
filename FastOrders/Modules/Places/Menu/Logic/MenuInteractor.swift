@@ -16,7 +16,7 @@ class MenuInteractor {
     //MARK: Actions
     
     func actionDidSelectMenuCategory(_ category: MenuCategory) {
-        
+        viewController?.router.presentMenuItemsViewController(for: category)
     }
     
     
