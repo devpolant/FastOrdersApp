@@ -318,11 +318,11 @@
             </objects>
             <point key="canvasLocation" x="-5487" y="-891"/>
         </scene>
-        <!--Item-->
+        <!--Map-->
         <scene sceneID="pwz-rg-mGa">
             <objects>
                 <navigationController id="cdV-Sb-NRl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="pUQ-YD-Hkq"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="ic_map_active" selectedImage="ic_map_active" id="pUQ-YD-Hkq"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lSr-wb-CEg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -335,11 +335,11 @@
             </objects>
             <point key="canvasLocation" x="-4516" y="-1313"/>
         </scene>
-        <!--Item-->
+        <!--List-->
         <scene sceneID="bnY-iI-zQU">
             <objects>
                 <navigationController id="eav-Di-3oM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="0Av-Vn-Yq1"/>
+                    <tabBarItem key="tabBarItem" title="List" image="ic_list_active" selectedImage="ic_list_active" id="0Av-Vn-Yq1"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dqr-Kb-Os3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -392,4 +392,8 @@
             <point key="canvasLocation" x="-3671" y="-1314"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_list_active" width="24" height="24"/>
+        <image name="ic_map_active" width="24" height="24"/>
+    </resources>
 </document>
