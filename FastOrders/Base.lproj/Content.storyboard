@@ -233,19 +233,22 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8s-V5-xfd">
-                                                    <rect key="frame" x="54" y="8" width="251" height="24"/>
+                                                    <rect key="frame" x="54" y="8" width="242" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hda-84-qW8">
-                                                    <rect key="frame" x="54" y="34" width="280" height="17"/>
+                                                    <rect key="frame" x="54" y="34" width="242" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="$5" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ui-3A-ddG">
-                                                    <rect key="frame" x="313" y="8" width="21" height="24"/>
+                                                    <rect key="frame" x="304" y="19.5" width="30" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="e7G-He-VsD"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -253,17 +256,16 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="7ui-3A-ddG" firstAttribute="leading" secondItem="h8s-V5-xfd" secondAttribute="trailing" constant="8" id="1ob-bn-aQU"/>
+                                                <constraint firstItem="7ui-3A-ddG" firstAttribute="centerY" secondItem="aZv-mq-Eu6" secondAttribute="centerY" id="6tf-z1-H8m"/>
                                                 <constraint firstAttribute="trailing" secondItem="7ui-3A-ddG" secondAttribute="trailing" constant="8" id="CGP-EH-0KS"/>
                                                 <constraint firstItem="h8s-V5-xfd" firstAttribute="leading" secondItem="tPY-K2-yNK" secondAttribute="trailing" constant="16" id="Lrh-6R-0up"/>
-                                                <constraint firstItem="7ui-3A-ddG" firstAttribute="bottom" secondItem="h8s-V5-xfd" secondAttribute="bottom" id="PUW-Ww-Qhm"/>
+                                                <constraint firstItem="hda-84-qW8" firstAttribute="width" secondItem="h8s-V5-xfd" secondAttribute="width" id="OPU-Dt-LgN"/>
                                                 <constraint firstItem="tPY-K2-yNK" firstAttribute="centerY" secondItem="aZv-mq-Eu6" secondAttribute="centerY" id="QWV-1w-T3F"/>
                                                 <constraint firstItem="hda-84-qW8" firstAttribute="top" secondItem="h8s-V5-xfd" secondAttribute="bottom" constant="2" id="T1T-sz-oIY"/>
                                                 <constraint firstItem="h8s-V5-xfd" firstAttribute="top" secondItem="aZv-mq-Eu6" secondAttribute="top" constant="8" id="The-da-5JD"/>
                                                 <constraint firstItem="tPY-K2-yNK" firstAttribute="leading" secondItem="aZv-mq-Eu6" secondAttribute="leading" constant="8" id="XNH-jY-RXF"/>
                                                 <constraint firstItem="hda-84-qW8" firstAttribute="leading" secondItem="tPY-K2-yNK" secondAttribute="trailing" constant="16" id="aqF-Mg-wiK"/>
-                                                <constraint firstItem="7ui-3A-ddG" firstAttribute="top" secondItem="h8s-V5-xfd" secondAttribute="top" id="k5k-g8-wZl"/>
                                                 <constraint firstAttribute="bottom" secondItem="hda-84-qW8" secondAttribute="bottom" constant="8" id="vVs-Lz-bHH"/>
-                                                <constraint firstAttribute="trailing" secondItem="hda-84-qW8" secondAttribute="trailing" constant="8" id="xJ6-yq-izX"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
