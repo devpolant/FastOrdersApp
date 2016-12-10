@@ -21,6 +21,9 @@ class ItemDetailsInteractor {
     
     func actionAddItemToCart(menuItem: MenuItem, quantity: Int) {
         
+        let cartItem = CartItem(menuItem: menuItem, quantity: quantity)
+        
+        CartManager.shared.addItemToCart(item: cartItem)
     }
     
 }

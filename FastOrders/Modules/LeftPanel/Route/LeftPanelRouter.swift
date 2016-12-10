@@ -59,5 +59,14 @@ class LeftPanelRouter: Router {
     
     func presentCart() {
         
+        let storyboard = UIStoryboard(name: "Cart", bundle: nil)
+        
+        let navigation = storyboard.instantiateInitialViewController() as! UINavigationController
+        let cartVC = navigation.viewControllers.first as! CartViewController
+        
+        cartVC.interactor = CartInteractor(viewController: cartVC)
+        cartVC.router = CartRouter(viewController: cartVC)
+        
+        viewController?.sidePanelController.centerPanel = navigation
     }
 }
