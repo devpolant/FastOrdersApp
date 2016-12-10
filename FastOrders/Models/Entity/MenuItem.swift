@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MenuItem {
+final class MenuItem {
     
     var id: String
     var name: String
@@ -26,6 +26,12 @@ class MenuItem {
         self.price = price
     }
     
+}
+
+
+//MARK: - JsonInitializable
+extension MenuItem: JsonInitializable {
+    
     convenience init(from json: [String: Any]) {
         self.init(id: json["_id"] as! String,
                   name: json["name"] as! String,
@@ -34,5 +40,4 @@ class MenuItem {
                   photoUrl: json["photo_url"] as? String,
                   price: json["price"] as! Double)
     }
-    
 }

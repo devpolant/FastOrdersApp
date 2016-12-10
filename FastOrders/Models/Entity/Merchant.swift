@@ -30,6 +30,11 @@ final class Merchant: NSObject {
         self.location = location
         self.visitorsCount = visitorsCount
     }
+}
+
+
+//MARK: - JsonInitializable
+extension Merchant: JsonInitializable {
     
     convenience init(from json: [String: Any]) {
         self.init(id: json["_id"] as! String,

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class MenuCategory {
+final class MenuCategory {
     
     var id: String
     var name: String
@@ -24,6 +24,12 @@ class MenuCategory {
         self.photoUrl = photoUrl
     }
     
+}
+
+
+//MARK: - JsonInitializable
+extension MenuCategory: JsonInitializable {
+    
     convenience init(from json: [String: Any]) {
         self.init(id: json["_id"] as! String,
                   name: json["name"] as! String,
@@ -31,5 +37,4 @@ class MenuCategory {
                   merchantId: json["merchant_id"] as! String,
                   photoUrl: json["photo_url"] as? String)
     }
-    
 }

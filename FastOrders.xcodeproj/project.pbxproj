@@ -38,6 +38,14 @@
 		14D82B591DFC532800150120 /* LeftPanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D82B581DFC532800150120 /* LeftPanelViewController.swift */; };
 		14D82B5B1DFC592A00150120 /* LeftPanelInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D82B5A1DFC592A00150120 /* LeftPanelInteractor.swift */; };
 		14D82B5E1DFC59AE00150120 /* LeftPanelRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D82B5D1DFC59AE00150120 /* LeftPanelRouter.swift */; };
+		14D82B621DFC698000150120 /* Orders.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14D82B601DFC698000150120 /* Orders.storyboard */; };
+		14D82B661DFC6D5B00150120 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D82B651DFC6D5B00150120 /* OrderTableViewCell.swift */; };
+		14D82B681DFC6F2E00150120 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D82B671DFC6F2E00150120 /* OrdersViewController.swift */; };
+		14D82B6D1DFC6FE100150120 /* OrdersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D82B6C1DFC6FE100150120 /* OrdersInteractor.swift */; };
+		14D82B701DFC6FFA00150120 /* OrdersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D82B6F1DFC6FFA00150120 /* OrdersRouter.swift */; };
+		14D82B731DFC70DF00150120 /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D82B721DFC70DF00150120 /* OrderItem.swift */; };
+		14D82B751DFC739800150120 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D82B741DFC739800150120 /* Order.swift */; };
+		14D82B771DFC779100150120 /* JsonInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D82B761DFC779100150120 /* JsonInitializable.swift */; };
 		14DD6EEB1DFC455900909363 /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DD6EE81DFC455900909363 /* JASidePanelController.m */; };
 		14DD6EEC1DFC455900909363 /* UIViewController+JASidePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DD6EEA1DFC455900909363 /* UIViewController+JASidePanel.m */; };
 		14DE0B1C1DF46511008439D5 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DE0B1B1DF46511008439D5 /* ServiceManager.swift */; };
@@ -87,6 +95,14 @@
 		14D82B581DFC532800150120 /* LeftPanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftPanelViewController.swift; path = Modules/LeftPanel/View/LeftPanelViewController.swift; sourceTree = "<group>"; };
 		14D82B5A1DFC592A00150120 /* LeftPanelInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftPanelInteractor.swift; path = Modules/LeftPanel/Logic/LeftPanelInteractor.swift; sourceTree = "<group>"; };
 		14D82B5D1DFC59AE00150120 /* LeftPanelRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftPanelRouter.swift; path = Modules/LeftPanel/Route/LeftPanelRouter.swift; sourceTree = "<group>"; };
+		14D82B611DFC698000150120 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Orders.storyboard; sourceTree = "<group>"; };
+		14D82B651DFC6D5B00150120 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderTableViewCell.swift; path = Views/Cells/Table/OrderTableViewCell.swift; sourceTree = "<group>"; };
+		14D82B671DFC6F2E00150120 /* OrdersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrdersViewController.swift; path = Modules/Orders/List/View/OrdersViewController.swift; sourceTree = "<group>"; };
+		14D82B6C1DFC6FE100150120 /* OrdersInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrdersInteractor.swift; path = Modules/Orders/List/Logic/OrdersInteractor.swift; sourceTree = "<group>"; };
+		14D82B6F1DFC6FFA00150120 /* OrdersRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrdersRouter.swift; path = Modules/Orders/List/Route/OrdersRouter.swift; sourceTree = "<group>"; };
+		14D82B721DFC70DF00150120 /* OrderItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderItem.swift; path = Models/Entity/OrderItem.swift; sourceTree = "<group>"; };
+		14D82B741DFC739800150120 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Order.swift; path = Models/Entity/Order.swift; sourceTree = "<group>"; };
+		14D82B761DFC779100150120 /* JsonInitializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonInitializable.swift; path = Models/Entity/JsonInitializable.swift; sourceTree = "<group>"; };
 		14DD6EE71DFC455900909363 /* JASidePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JASidePanelController.h; sourceTree = "<group>"; };
 		14DD6EE81DFC455900909363 /* JASidePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JASidePanelController.m; sourceTree = "<group>"; };
 		14DD6EE91DFC455900909363 /* UIViewController+JASidePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JASidePanel.h"; sourceTree = "<group>"; };
@@ -173,6 +189,7 @@
 				147C322F1DF75E6F0005B3D4 /* MerchantTableViewCell.swift */,
 				147C32401DF764650005B3D4 /* MenuCategoryTableViewCell.swift */,
 				1472FB051DF8ABCB00CD0C62 /* MenuItemTableViewCell.swift */,
+				14D82B651DFC6D5B00150120 /* OrderTableViewCell.swift */,
 			);
 			name = Table;
 			sourceTree = "<group>";
@@ -290,6 +307,7 @@
 				14CC2AF41DF4375400BBF5B3 /* Router.swift */,
 				14CC2ACE1DF4352200BBF5B3 /* Main.storyboard */,
 				14DE0B211DF48AFB008439D5 /* Content.storyboard */,
+				14D82B601DFC698000150120 /* Orders.storyboard */,
 				14CC2AD11DF4352200BBF5B3 /* Assets.xcassets */,
 				14CC2AD31DF4352200BBF5B3 /* LaunchScreen.storyboard */,
 				14CC2AD61DF4352200BBF5B3 /* Info.plist */,
@@ -310,6 +328,7 @@
 				14DE0B281DF4935E008439D5 /* Map */,
 				14BE2D8B1DF695D90050FA29 /* Places */,
 				14D82B511DFC482D00150120 /* LeftPanel */,
+				14D82B691DFC6F3300150120 /* Orders */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -434,6 +453,48 @@
 			name = Route;
 			sourceTree = "<group>";
 		};
+		14D82B691DFC6F3300150120 /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				14D82B6A1DFC6F3B00150120 /* List */,
+			);
+			name = Orders;
+			sourceTree = "<group>";
+		};
+		14D82B6A1DFC6F3B00150120 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				14D82B6B1DFC6F4200150120 /* View */,
+				14D82B6E1DFC6FE500150120 /* Logic */,
+				14D82B711DFC6FFF00150120 /* Route */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
+		14D82B6B1DFC6F4200150120 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				14D82B671DFC6F2E00150120 /* OrdersViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		14D82B6E1DFC6FE500150120 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				14D82B6C1DFC6FE100150120 /* OrdersInteractor.swift */,
+			);
+			name = Logic;
+			sourceTree = "<group>";
+		};
+		14D82B711DFC6FFF00150120 /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				14D82B6F1DFC6FFA00150120 /* OrdersRouter.swift */,
+			);
+			name = Route;
+			sourceTree = "<group>";
+		};
 		14DD6EE61DFC455900909363 /* JASidePanels */ = {
 			isa = PBXGroup;
 			children = (
@@ -510,9 +571,12 @@
 		14DE0B331DF49933008439D5 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				14D82B761DFC779100150120 /* JsonInitializable.swift */,
 				14DE0B311DF4992F008439D5 /* Merchant.swift */,
 				147C323E1DF762CF0005B3D4 /* MenuCategory.swift */,
 				1472FAF71DF8A33F00CD0C62 /* MenuItem.swift */,
+				14D82B741DFC739800150120 /* Order.swift */,
+				14D82B721DFC70DF00150120 /* OrderItem.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -598,6 +662,7 @@
 			files = (
 				14DE0B231DF48AFB008439D5 /* Content.storyboard in Resources */,
 				14CC2AD51DF4352200BBF5B3 /* LaunchScreen.storyboard in Resources */,
+				14D82B621DFC698000150120 /* Orders.storyboard in Resources */,
 				14CC2AD21DF4352200BBF5B3 /* Assets.xcassets in Resources */,
 				14CC2AD01DF4352200BBF5B3 /* Main.storyboard in Resources */,
 			);
@@ -660,7 +725,9 @@
 			files = (
 				14CC2AE91DF4368000BBF5B3 /* RegistrationViewController.swift in Sources */,
 				14DE0B201DF470FB008439D5 /* Constants.swift in Sources */,
+				14D82B771DFC779100150120 /* JsonInitializable.swift in Sources */,
 				14D82B591DFC532800150120 /* LeftPanelViewController.swift in Sources */,
+				14D82B731DFC70DF00150120 /* OrderItem.swift in Sources */,
 				14D82B561DFC52E900150120 /* ContainerViewController.swift in Sources */,
 				14BE2D951DF696DB0050FA29 /* MerchantsRouter.swift in Sources */,
 				14BE2D931DF696A40050FA29 /* MerchantsInteractor.swift in Sources */,
@@ -670,6 +737,7 @@
 				14BE2D971DF69DE20050FA29 /* UIViewController+Alert.swift in Sources */,
 				147C32301DF75E6F0005B3D4 /* MerchantTableViewCell.swift in Sources */,
 				147C323D1DF7618B0005B3D4 /* MenuRouter.swift in Sources */,
+				14D82B661DFC6D5B00150120 /* OrderTableViewCell.swift in Sources */,
 				14D82B5E1DFC59AE00150120 /* LeftPanelRouter.swift in Sources */,
 				14CC2AE31DF4360F00BBF5B3 /* LoginInteractor.swift in Sources */,
 				14DE0B351DF49994008439D5 /* Location.swift in Sources */,
@@ -682,6 +750,7 @@
 				1472FAFE1DF8A92C00CD0C62 /* MenuItemsInteractor.swift in Sources */,
 				14CC2AED1DF436C700BBF5B3 /* RegistrationInteractor.swift in Sources */,
 				1472FB011DF8A95E00CD0C62 /* MenuItemsRouter.swift in Sources */,
+				14D82B751DFC739800150120 /* Order.swift in Sources */,
 				147C323B1DF761760005B3D4 /* MenuInteractor.swift in Sources */,
 				14CC2AE61DF4364600BBF5B3 /* LoginRouter.swift in Sources */,
 				14D82B5B1DFC592A00150120 /* LeftPanelInteractor.swift in Sources */,
@@ -690,12 +759,15 @@
 				1472FAF81DF8A33F00CD0C62 /* MenuItem.swift in Sources */,
 				1472FAFA1DF8A8F900CD0C62 /* MenuItemsViewController.swift in Sources */,
 				14BE2D8F1DF696670050FA29 /* MerchantsViewController.swift in Sources */,
+				14D82B701DFC6FFA00150120 /* OrdersRouter.swift in Sources */,
 				147C32411DF764650005B3D4 /* MenuCategoryTableViewCell.swift in Sources */,
 				14CC2ACB1DF4352200BBF5B3 /* AppDelegate.swift in Sources */,
+				14D82B681DFC6F2E00150120 /* OrdersViewController.swift in Sources */,
 				14CC2AF01DF436F700BBF5B3 /* RegistrationRouter.swift in Sources */,
 				1472FB061DF8ABCB00CD0C62 /* MenuItemTableViewCell.swift in Sources */,
 				14DE0B1C1DF46511008439D5 /* ServiceManager.swift in Sources */,
 				147C32351DF761220005B3D4 /* MenuViewController.swift in Sources */,
+				14D82B6D1DFC6FE100150120 /* OrdersInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -716,6 +788,14 @@
 				14CC2AD41DF4352200BBF5B3 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		14D82B601DFC698000150120 /* Orders.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14D82B611DFC698000150120 /* Base */,
+			);
+			name = Orders.storyboard;
 			sourceTree = "<group>";
 		};
 		14DE0B211DF48AFB008439D5 /* Content.storyboard */ = {
