@@ -46,6 +46,7 @@
 		14D82B731DFC70DF00150120 /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D82B721DFC70DF00150120 /* OrderItem.swift */; };
 		14D82B751DFC739800150120 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D82B741DFC739800150120 /* Order.swift */; };
 		14D82B771DFC779100150120 /* JsonInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D82B761DFC779100150120 /* JsonInitializable.swift */; };
+		14D82B791DFC816900150120 /* Date+Print.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D82B781DFC816900150120 /* Date+Print.swift */; };
 		14DD6EEB1DFC455900909363 /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DD6EE81DFC455900909363 /* JASidePanelController.m */; };
 		14DD6EEC1DFC455900909363 /* UIViewController+JASidePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DD6EEA1DFC455900909363 /* UIViewController+JASidePanel.m */; };
 		14DE0B1C1DF46511008439D5 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DE0B1B1DF46511008439D5 /* ServiceManager.swift */; };
@@ -103,6 +104,7 @@
 		14D82B721DFC70DF00150120 /* OrderItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderItem.swift; path = Models/Entity/OrderItem.swift; sourceTree = "<group>"; };
 		14D82B741DFC739800150120 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Order.swift; path = Models/Entity/Order.swift; sourceTree = "<group>"; };
 		14D82B761DFC779100150120 /* JsonInitializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonInitializable.swift; path = Models/Entity/JsonInitializable.swift; sourceTree = "<group>"; };
+		14D82B781DFC816900150120 /* Date+Print.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+Print.swift"; path = "Utils/Date+Print.swift"; sourceTree = "<group>"; };
 		14DD6EE71DFC455900909363 /* JASidePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JASidePanelController.h; sourceTree = "<group>"; };
 		14DD6EE81DFC455900909363 /* JASidePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JASidePanelController.m; sourceTree = "<group>"; };
 		14DD6EE91DFC455900909363 /* UIViewController+JASidePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JASidePanel.h"; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 			children = (
 				14DE0B1F1DF470FB008439D5 /* Constants.swift */,
 				14BE2D961DF69DE20050FA29 /* UIViewController+Alert.swift */,
+				14D82B781DFC816900150120 /* Date+Print.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -756,6 +759,7 @@
 				14D82B5B1DFC592A00150120 /* LeftPanelInteractor.swift in Sources */,
 				14DE0B321DF4992F008439D5 /* Merchant.swift in Sources */,
 				14DE0B251DF48B76008439D5 /* KeyboardManager.swift in Sources */,
+				14D82B791DFC816900150120 /* Date+Print.swift in Sources */,
 				1472FAF81DF8A33F00CD0C62 /* MenuItem.swift in Sources */,
 				1472FAFA1DF8A8F900CD0C62 /* MenuItemsViewController.swift in Sources */,
 				14BE2D8F1DF696670050FA29 /* MerchantsViewController.swift in Sources */,

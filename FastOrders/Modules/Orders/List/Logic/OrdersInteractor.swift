@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class OrdersInteractor {
     
@@ -17,4 +18,27 @@ class OrdersInteractor {
     }
     
     
+    //MARK: - Actions
+    
+    func actionDidSelectOrder(_ order: Order) {
+        
+    }
+    
+    
+    //MARK: - Networking
+    
+    func loadOrders() {
+        
+        PKHUD.sharedHUD.contentView = PKHUDProgressView(title: "My Orders", subtitle: "Loading...")
+        PKHUD.sharedHUD.show()
+        
+        ServiceManager.shared.loadOrders { [weak self] success, message, orders in
+            
+            PKHUD.sharedHUD.hide()
+            
+            guard let orders = orders else { return }
+            
+            self?.viewController?.updateOrders(orders)
+        }
+    }
 }

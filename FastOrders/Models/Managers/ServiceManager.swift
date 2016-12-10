@@ -13,6 +13,7 @@ typealias AuthCompletionHandler = (_ success: Bool, _ message: String) -> Void
 typealias PlacesCompletionHandler = (_ success: Bool, _ message: String?, _ merchants: [Merchant]?) -> Void
 typealias MenuCategoriesCompletionHandler = (_ success: Bool, _ message: String?, _ merchants: [MenuCategory]?) -> Void
 typealias MenuItemsCompletionHandler = (_ success: Bool, _ message: String?, _ merchants: [MenuItem]?) -> Void
+typealias OrdersCompletionHandler = (_ success: Bool, _ message: String?, _ orders: [Order]?) -> Void
 
 class ServiceManager {
     
@@ -192,6 +193,33 @@ class ServiceManager {
         }
     }
     
+    
+    //MARK: - Orders
+    
+    func loadOrders(completion: @escaping OrdersCompletionHandler) {
+        
+        Alamofire
+            .request(OrderRouter.list(token: self.accessToken!))
+            .responseJSON { (dataResponse) in
+                
+                guard let response = dataResponse.result.value as? [String: Any] else {
+                    completion(false, "Something went wrong", nil)
+                    return
+                }
+                
+                let success = !(response["error"] as! Bool)
+                let message = response["message"] as? String
+                
+                var orders = [Order]()
+                
+                for jsonObject in response["orders"] as! Array<[String: Any]> {
+                    let order = Order(from: jsonObject)
+                    orders.append(order)
+                }
+                completion(success, message, orders)
+        }
+    }
+    
 }
 
 
@@ -342,3 +370,52 @@ enum PlacesRouter: URLRequestConvertible {
     }
 }
 
+
+//MARK: - Orders Routing
+enum OrderRouter: URLRequestConvertible {
+    
+    private static let baseURLString = "\(Constants.baseApiServicePath)/orders/customer"
+    
+    case list(token: String)
+    
+    private var method: HTTPMethod {
+        switch self {
+        case .list:
+            return .post
+        }
+    }
+    
+    private var path: String {
+        switch self {
+        case .list:
+            return "/list"
+        }
+    }
+    
+    private var token: String {
+        switch self {
+        case let .list(token):
+            return token
+        }
+    }
+    
+    
+    //MARK: URLRequestConvertible
+    
+    func asURLRequest() throws -> URLRequest {
+        
+        let url = try OrderRouter.baseURLString.asURL()
+        
+        var urlRequest = URLRequest(url: url.appendingPathComponent(path))
+        urlRequest.httpMethod = method.rawValue
+        
+        urlRequest.setValue("Bearer " + token, forHTTPHeaderField: "Authorization")
+        
+        switch self {
+        case .list:
+            break
+        }
+        
+        return urlRequest
+    }
+}
