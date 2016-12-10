@@ -66,6 +66,28 @@ class ServiceManager {
         }
     }
     
+    func sendLogout(completion: @escaping AuthCompletionHandler) {
+        
+        Alamofire
+            .request(AuthRouter.logout(token: self.accessToken!))
+            .responseJSON { (dataResponse) in
+                
+                guard let response = dataResponse.result.value as? [String: Any] else {
+                    completion(false, "Something went wrong")
+                    return
+                }
+                
+                let success = !(response["error"] as! Bool)
+                let message = response["message"] as! String
+                
+                if success {
+                    self.accessToken = nil
+                }
+                
+                completion(success, message)
+        }
+    }
+    
     
     //MARK: - Places
     
@@ -176,13 +198,13 @@ enum AuthRouter: URLRequestConvertible {
     
     case loginUser(login: String, password: String)
     case registerUser(name: String, login: String, password: String)
-    
+    case logout(token: String)
     
     private var method: HTTPMethod {
         switch self {
-        case .loginUser:
-            return .post
-        case .registerUser:
+        case .loginUser: fallthrough
+        case .registerUser: fallthrough
+        case .logout:
             return .post
         }
     }
@@ -193,6 +215,8 @@ enum AuthRouter: URLRequestConvertible {
             return "/login"
         case .registerUser:
             return "/register"
+        case .logout:
+            return "/logout"
         }
     }
     
@@ -214,6 +238,8 @@ enum AuthRouter: URLRequestConvertible {
         case let .registerUser(name, login, password):
             let params = ["name": name, "login": login, "password": password]
             urlRequest = try URLEncoding.default.encode(urlRequest, with:params)
+        case let .logout(token):
+            urlRequest.setValue("Bearer " + token, forHTTPHeaderField: "Authorization")
         }
         return urlRequest
     }

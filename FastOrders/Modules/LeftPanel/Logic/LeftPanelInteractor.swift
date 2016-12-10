@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import PKHUD
 
 class LeftPanelInteractor {
     
     weak var viewController: LeftPanelViewController?
     
+    private var logoutLoading = false
     
     init(viewController: LeftPanelViewController?) {
         self.viewController = viewController
@@ -41,6 +43,23 @@ class LeftPanelInteractor {
     
     func logout() {
         
+        guard !logoutLoading else { return }
+        
+        PKHUD.sharedHUD.contentView = PKHUDProgressView(title: "Logout", subtitle: "Loading...")
+        PKHUD.sharedHUD.show()
+        
+        ServiceManager.shared.sendLogout { [weak self] success, message in
+
+            self?.logoutLoading = false
+            
+            PKHUD.sharedHUD.hide()
+            
+            if success {
+                self?.viewController?.router.dismiss(animated: true)
+            } else {
+                self?.viewController?.showAlert(title: "Message", message: "Logout Failed")
+            }
+        }
     }
     
 }

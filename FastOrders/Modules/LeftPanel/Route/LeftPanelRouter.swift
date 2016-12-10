@@ -26,6 +26,15 @@ class LeftPanelRouter: Router {
     
     //MARK: - Routes
     
+    func dismiss(animated: Bool) {
+        
+        if let navigationController = viewController?.sidePanelController.navigationController {
+            navigationController.popViewController(animated: animated)
+        } else {
+            viewController?.sidePanelController.dismiss(animated: animated, completion: nil)
+        }
+    }
+    
     func presentPlaces() {
         
         let contentStoryboard = UIStoryboard(name: "Content", bundle: nil)
