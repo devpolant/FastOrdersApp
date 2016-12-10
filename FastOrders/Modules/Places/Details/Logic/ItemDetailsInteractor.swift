@@ -24,6 +24,8 @@ class ItemDetailsInteractor {
         let cartItem = CartItem(menuItem: menuItem, quantity: quantity)
         
         CartManager.shared.addItemToCart(item: cartItem)
+        
+        viewController?.router.dismiss(animated: true)
     }
     
 }
