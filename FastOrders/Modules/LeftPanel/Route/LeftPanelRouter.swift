@@ -41,7 +41,7 @@ class LeftPanelRouter: Router {
         
         let initialVC = contentStoryboard.instantiateInitialViewController()!
         
-        viewController?.present(initialVC, animated: true, completion: nil)
+        viewController?.sidePanelController.centerPanel = initialVC
     }
     
     func presentOrders() {
