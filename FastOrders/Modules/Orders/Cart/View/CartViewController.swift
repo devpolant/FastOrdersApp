@@ -78,6 +78,18 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     //MARK: UITableViewDelegate
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            let item = cartItem(at: indexPath)
+            
+            CartManager.shared.deleteItemFromCart(item: item)
+            cartItems = CartManager.shared.items
+            
+            tableView.deleteRows(at: [indexPath], with: .left)
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
