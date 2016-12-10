@@ -39,6 +39,8 @@ class ServiceManager {
                     return
                 }
                 
+                debugPrint("Logged In: \(response)")
+                
                 let success = !(response["error"] as! Bool)
                 let message = response["message"] as! String
                 self.accessToken = response["access_token"] as? String
@@ -57,6 +59,8 @@ class ServiceManager {
                     completion(false, "Something went wrong")
                     return
                 }
+                
+                debugPrint("Registered: \(response)")
                 
                 let success = !(response["error"] as! Bool)
                 let message = response["message"] as! String
