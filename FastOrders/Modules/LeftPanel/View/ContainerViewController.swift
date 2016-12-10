@@ -10,6 +10,9 @@ import UIKit
 
 class ContainerViewController: JASidePanelController {
 
+    
+    //MARK: - Life Cycle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -22,9 +25,11 @@ class ContainerViewController: JASidePanelController {
         centerPanel = centerVC
         
         shouldResizeLeftPanel = true
-        
         panningLimitedToTopViewController = false
     }
+    
+    
+    //MARK: - JASidePanelController
     
     override func leftButtonForCenterPanel() -> UIBarButtonItem! {
         
@@ -38,29 +43,4 @@ class ContainerViewController: JASidePanelController {
         return barItem
     }
     
-//    
-//    -(void)awakeFromNib {
-//    
-//    [self setLeftPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"LeftSideMenuPanelController"]];
-//    [self setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"CenterPanelNavigationController"]];
-//    
-//    //Set auto resizing left navigation menu panel.
-//    self.shouldResizeLeftPanel = YES;
-//    
-//    //Set enable swipe for left panel after pushing new view controller in center container.
-//    self.panningLimitedToTopViewController = NO;
-//    }
-//    
-//    - (UIBarButtonItem *)leftButtonForCenterPanel {
-//    
-//    UIImage* backNavigationImage = [UIImage imageNamed:@"ic_burger"];
-//    
-//    UIBarButtonItem *barItem = [[UIBarButtonItem alloc] initWithImage:backNavigationImage
-//    style:UIBarButtonItemStylePlain
-//    target:self
-//    action:@selector(toggleLeftPanel:)];
-//    
-//    return barItem;
-//    }
-
 }

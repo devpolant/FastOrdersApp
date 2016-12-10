@@ -431,16 +431,35 @@ static char ja_kvoContext;
 #pragma mark - Panel Buttons
 
 - (void)_placeButtonForLeftPanel {
+    
     if (self.leftPanel) {
         UIViewController *buttonController = self.centerPanel;
+        
         if ([buttonController isKindOfClass:[UINavigationController class]]) {
+            
             UINavigationController *nav = (UINavigationController *)buttonController;
             if ([nav.viewControllers count] > 0) {
                 buttonController = [nav.viewControllers objectAtIndex:0];
             }
-        }
-        if (!buttonController.navigationItem.leftBarButtonItem) {   
-            buttonController.navigationItem.leftBarButtonItem = [self leftButtonForCenterPanel];
+            
+            if (!buttonController.navigationItem.leftBarButtonItem) {
+                buttonController.navigationItem.leftBarButtonItem = [self leftButtonForCenterPanel];
+            }
+            
+        } else if ([buttonController isKindOfClass:[UITabBarController class]]) {
+            
+            UITabBarController* tabController = (UITabBarController*)buttonController;
+            for (UIViewController* vc in tabController.viewControllers) {
+                
+                if ([vc isKindOfClass:[UINavigationController class]]) {
+                    UINavigationController* navigation = (UINavigationController*)vc;
+                    
+                    UIViewController* contentVC = navigation.viewControllers.firstObject;
+                    if (!contentVC.navigationItem.leftBarButtonItem) {
+                        contentVC.navigationItem.leftBarButtonItem = [self leftButtonForCenterPanel];
+                    }
+                }
+            }
         }
     }	
 }
