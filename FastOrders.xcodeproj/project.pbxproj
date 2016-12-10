@@ -34,6 +34,9 @@
 		14CC2AF01DF436F700BBF5B3 /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC2AEF1DF436F700BBF5B3 /* RegistrationRouter.swift */; };
 		14CC2AF31DF4371600BBF5B3 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC2AF21DF4371600BBF5B3 /* RootRouter.swift */; };
 		14CC2AF51DF4375400BBF5B3 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CC2AF41DF4375400BBF5B3 /* Router.swift */; };
+		14D82B501DFC482900150120 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D82B4F1DFC482900150120 /* ContainerViewController.swift */; };
+		14DD6EEB1DFC455900909363 /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DD6EE81DFC455900909363 /* JASidePanelController.m */; };
+		14DD6EEC1DFC455900909363 /* UIViewController+JASidePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DD6EEA1DFC455900909363 /* UIViewController+JASidePanel.m */; };
 		14DE0B1C1DF46511008439D5 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DE0B1B1DF46511008439D5 /* ServiceManager.swift */; };
 		14DE0B201DF470FB008439D5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DE0B1F1DF470FB008439D5 /* Constants.swift */; };
 		14DE0B231DF48AFB008439D5 /* Content.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14DE0B211DF48AFB008439D5 /* Content.storyboard */; };
@@ -76,6 +79,12 @@
 		14CC2AEF1DF436F700BBF5B3 /* RegistrationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationRouter.swift; path = Modules/Auth/Registration/Route/RegistrationRouter.swift; sourceTree = "<group>"; };
 		14CC2AF21DF4371600BBF5B3 /* RootRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		14CC2AF41DF4375400BBF5B3 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		14D82B4F1DFC482900150120 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainerViewController.swift; path = Modules/LeftPanel/View/ContainerViewController.swift; sourceTree = "<group>"; };
+		14D82B531DFC4A4100150120 /* FastOrders-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FastOrders-Bridging-Header.h"; sourceTree = "<group>"; };
+		14DD6EE71DFC455900909363 /* JASidePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JASidePanelController.h; sourceTree = "<group>"; };
+		14DD6EE81DFC455900909363 /* JASidePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JASidePanelController.m; sourceTree = "<group>"; };
+		14DD6EE91DFC455900909363 /* UIViewController+JASidePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JASidePanel.h"; sourceTree = "<group>"; };
+		14DD6EEA1DFC455900909363 /* UIViewController+JASidePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JASidePanel.m"; sourceTree = "<group>"; };
 		14DE0B1B1DF46511008439D5 /* ServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceManager.swift; path = Models/Managers/ServiceManager.swift; sourceTree = "<group>"; };
 		14DE0B1F1DF470FB008439D5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utils/Constants.swift; sourceTree = "<group>"; };
 		14DE0B221DF48AFB008439D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Content.storyboard; sourceTree = "<group>"; };
@@ -278,6 +287,8 @@
 				14CC2AD11DF4352200BBF5B3 /* Assets.xcassets */,
 				14CC2AD31DF4352200BBF5B3 /* LaunchScreen.storyboard */,
 				14CC2AD61DF4352200BBF5B3 /* Info.plist */,
+				14D82B531DFC4A4100150120 /* FastOrders-Bridging-Header.h */,
+				14DD6EED1DFC456000909363 /* Vendor */,
 				14BE2D981DF69DEA0050FA29 /* Utils */,
 				147C32311DF75E730005B3D4 /* Views */,
 				14DE0B1D1DF46519008439D5 /* Models */,
@@ -292,6 +303,7 @@
 				14CC2ADF1DF435CD00BBF5B3 /* Auth */,
 				14DE0B281DF4935E008439D5 /* Map */,
 				14BE2D8B1DF695D90050FA29 /* Places */,
+				14D82B511DFC482D00150120 /* LeftPanel */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -371,6 +383,42 @@
 				14CC2AEF1DF436F700BBF5B3 /* RegistrationRouter.swift */,
 			);
 			name = Route;
+			sourceTree = "<group>";
+		};
+		14D82B511DFC482D00150120 /* LeftPanel */ = {
+			isa = PBXGroup;
+			children = (
+				14D82B521DFC483500150120 /* View */,
+			);
+			name = LeftPanel;
+			sourceTree = "<group>";
+		};
+		14D82B521DFC483500150120 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				14D82B4F1DFC482900150120 /* ContainerViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		14DD6EE61DFC455900909363 /* JASidePanels */ = {
+			isa = PBXGroup;
+			children = (
+				14DD6EE71DFC455900909363 /* JASidePanelController.h */,
+				14DD6EE81DFC455900909363 /* JASidePanelController.m */,
+				14DD6EE91DFC455900909363 /* UIViewController+JASidePanel.h */,
+				14DD6EEA1DFC455900909363 /* UIViewController+JASidePanel.m */,
+			);
+			name = JASidePanels;
+			path = Vendor/JASidePanels;
+			sourceTree = "<group>";
+		};
+		14DD6EED1DFC456000909363 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				14DD6EE61DFC455900909363 /* JASidePanels */,
+			);
+			name = Vendor;
 			sourceTree = "<group>";
 		};
 		14DE0B1D1DF46519008439D5 /* Models */ = {
@@ -579,9 +627,11 @@
 			files = (
 				14CC2AE91DF4368000BBF5B3 /* RegistrationViewController.swift in Sources */,
 				14DE0B201DF470FB008439D5 /* Constants.swift in Sources */,
+				14D82B501DFC482900150120 /* ContainerViewController.swift in Sources */,
 				14BE2D951DF696DB0050FA29 /* MerchantsRouter.swift in Sources */,
 				14BE2D931DF696A40050FA29 /* MerchantsInteractor.swift in Sources */,
 				14DE0B301DF493C8008439D5 /* MapRouter.swift in Sources */,
+				14DD6EEB1DFC455900909363 /* JASidePanelController.m in Sources */,
 				14CC2AF51DF4375400BBF5B3 /* Router.swift in Sources */,
 				14BE2D971DF69DE20050FA29 /* UIViewController+Alert.swift in Sources */,
 				147C32301DF75E6F0005B3D4 /* MerchantTableViewCell.swift in Sources */,
@@ -589,6 +639,7 @@
 				14CC2AE31DF4360F00BBF5B3 /* LoginInteractor.swift in Sources */,
 				14DE0B351DF49994008439D5 /* Location.swift in Sources */,
 				14CC2ADD1DF435C100BBF5B3 /* LoginViewController.swift in Sources */,
+				14DD6EEC1DFC455900909363 /* UIViewController+JASidePanel.m in Sources */,
 				147C323F1DF762CF0005B3D4 /* MenuCategory.swift in Sources */,
 				14DE0B2E1DF493B3008439D5 /* MapInteractor.swift in Sources */,
 				14CC2AF31DF4371600BBF5B3 /* RootRouter.swift in Sources */,
@@ -746,6 +797,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.polant.FastOrders;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FastOrders/FastOrders-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -761,6 +813,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.polant.FastOrders;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FastOrders/FastOrders-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
