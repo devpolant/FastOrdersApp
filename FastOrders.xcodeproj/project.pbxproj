@@ -18,6 +18,9 @@
 		147C323D1DF7618B0005B3D4 /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C323C1DF7618B0005B3D4 /* MenuRouter.swift */; };
 		147C323F1DF762CF0005B3D4 /* MenuCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C323E1DF762CF0005B3D4 /* MenuCategory.swift */; };
 		147C32411DF764650005B3D4 /* MenuCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147C32401DF764650005B3D4 /* MenuCategoryTableViewCell.swift */; };
+		14AE986C1DFCA2A5009217E1 /* ItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AE986B1DFCA2A5009217E1 /* ItemDetailsViewController.swift */; };
+		14AE98711DFCA647009217E1 /* ItemDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AE98701DFCA647009217E1 /* ItemDetailsInteractor.swift */; };
+		14AE98741DFCA669009217E1 /* ItemDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AE98731DFCA669009217E1 /* ItemDetailsRouter.swift */; };
 		14BE2D8F1DF696670050FA29 /* MerchantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BE2D8E1DF696670050FA29 /* MerchantsViewController.swift */; };
 		14BE2D931DF696A40050FA29 /* MerchantsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BE2D921DF696A40050FA29 /* MerchantsInteractor.swift */; };
 		14BE2D951DF696DB0050FA29 /* MerchantsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BE2D941DF696DB0050FA29 /* MerchantsRouter.swift */; };
@@ -73,6 +76,9 @@
 		147C323C1DF7618B0005B3D4 /* MenuRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuRouter.swift; path = Modules/Places/Menu/Route/MenuRouter.swift; sourceTree = "<group>"; };
 		147C323E1DF762CF0005B3D4 /* MenuCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuCategory.swift; path = Models/Entity/MenuCategory.swift; sourceTree = "<group>"; };
 		147C32401DF764650005B3D4 /* MenuCategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuCategoryTableViewCell.swift; path = Views/Cells/Table/MenuCategoryTableViewCell.swift; sourceTree = "<group>"; };
+		14AE986B1DFCA2A5009217E1 /* ItemDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemDetailsViewController.swift; path = Modules/Places/Details/View/ItemDetailsViewController.swift; sourceTree = "<group>"; };
+		14AE98701DFCA647009217E1 /* ItemDetailsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemDetailsInteractor.swift; path = Modules/Places/Details/Logic/ItemDetailsInteractor.swift; sourceTree = "<group>"; };
+		14AE98731DFCA669009217E1 /* ItemDetailsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemDetailsRouter.swift; path = Modules/Places/Details/Route/ItemDetailsRouter.swift; sourceTree = "<group>"; };
 		14BE2D8E1DF696670050FA29 /* MerchantsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MerchantsViewController.swift; path = Modules/Places/Merchants/View/MerchantsViewController.swift; sourceTree = "<group>"; };
 		14BE2D921DF696A40050FA29 /* MerchantsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MerchantsInteractor.swift; path = Modules/Places/Merchants/Logic/MerchantsInteractor.swift; sourceTree = "<group>"; };
 		14BE2D941DF696DB0050FA29 /* MerchantsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MerchantsRouter.swift; path = Modules/Places/Merchants/Route/MerchantsRouter.swift; sourceTree = "<group>"; };
@@ -230,12 +236,47 @@
 			name = Route;
 			sourceTree = "<group>";
 		};
+		14AE986D1DFCA306009217E1 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				14AE986E1DFCA310009217E1 /* View */,
+				14AE98721DFCA653009217E1 /* Logic */,
+				14AE98751DFCA66E009217E1 /* Route */,
+			);
+			name = Details;
+			sourceTree = "<group>";
+		};
+		14AE986E1DFCA310009217E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				14AE986B1DFCA2A5009217E1 /* ItemDetailsViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		14AE98721DFCA653009217E1 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				14AE98701DFCA647009217E1 /* ItemDetailsInteractor.swift */,
+			);
+			name = Logic;
+			sourceTree = "<group>";
+		};
+		14AE98751DFCA66E009217E1 /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				14AE98731DFCA669009217E1 /* ItemDetailsRouter.swift */,
+			);
+			name = Route;
+			sourceTree = "<group>";
+		};
 		14BE2D8B1DF695D90050FA29 /* Places */ = {
 			isa = PBXGroup;
 			children = (
 				14BE2D8C1DF695EC0050FA29 /* Merchants */,
 				147C32361DF761290005B3D4 /* Menu */,
 				1472FAFB1DF8A8FE00CD0C62 /* MenuItems */,
+				14AE986D1DFCA306009217E1 /* Details */,
 			);
 			name = Places;
 			sourceTree = "<group>";
@@ -739,6 +780,7 @@
 				14CC2AF51DF4375400BBF5B3 /* Router.swift in Sources */,
 				14BE2D971DF69DE20050FA29 /* UIViewController+Alert.swift in Sources */,
 				147C32301DF75E6F0005B3D4 /* MerchantTableViewCell.swift in Sources */,
+				14AE98741DFCA669009217E1 /* ItemDetailsRouter.swift in Sources */,
 				147C323D1DF7618B0005B3D4 /* MenuRouter.swift in Sources */,
 				14D82B661DFC6D5B00150120 /* OrderTableViewCell.swift in Sources */,
 				14D82B5E1DFC59AE00150120 /* LeftPanelRouter.swift in Sources */,
@@ -748,9 +790,11 @@
 				14DD6EEC1DFC455900909363 /* UIViewController+JASidePanel.m in Sources */,
 				147C323F1DF762CF0005B3D4 /* MenuCategory.swift in Sources */,
 				14DE0B2E1DF493B3008439D5 /* MapInteractor.swift in Sources */,
+				14AE98711DFCA647009217E1 /* ItemDetailsInteractor.swift in Sources */,
 				14CC2AF31DF4371600BBF5B3 /* RootRouter.swift in Sources */,
 				14DE0B271DF49357008439D5 /* MapViewController.swift in Sources */,
 				1472FAFE1DF8A92C00CD0C62 /* MenuItemsInteractor.swift in Sources */,
+				14AE986C1DFCA2A5009217E1 /* ItemDetailsViewController.swift in Sources */,
 				14CC2AED1DF436C700BBF5B3 /* RegistrationInteractor.swift in Sources */,
 				1472FB011DF8A95E00CD0C62 /* MenuItemsRouter.swift in Sources */,
 				14D82B751DFC739800150120 /* Order.swift in Sources */,

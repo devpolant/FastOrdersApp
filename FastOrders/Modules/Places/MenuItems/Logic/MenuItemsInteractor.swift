@@ -17,7 +17,7 @@ class MenuItemsInteractor {
     //MARK: Actions
     
     func actionDidSelectMenuItem(_ menuItem: MenuItem) {
-        
+        viewController?.router.presentItemDetailsViewControleller(for: menuItem)
     }
     
     
