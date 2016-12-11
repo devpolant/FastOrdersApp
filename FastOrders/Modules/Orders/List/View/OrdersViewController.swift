@@ -47,6 +47,8 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
         cell?.totalPriceLabel.text = "$\(order.totalPrice)"
         cell?.orderDateLabel.text = order.availabilityDate.readableString
         
+        cell?.orderStateLabel.text = order.state.rawValue.capitalized
+        
         return cell!
     }
     

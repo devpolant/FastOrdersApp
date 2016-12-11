@@ -17,4 +17,7 @@ class OrderTableViewCell: UITableViewCell {
     @IBOutlet weak var totalPriceLabel: UILabel!
     
     @IBOutlet weak var orderDateLabel: UILabel!
+    
+    @IBOutlet weak var orderStateLabel: UILabel!
+    
 }
