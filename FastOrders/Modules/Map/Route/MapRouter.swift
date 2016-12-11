@@ -28,8 +28,7 @@ class MapRouter: Router {
         
         let menuVC = storyboard.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
         
-        menuVC.interactor = MenuInteractor()
-        menuVC.interactor.viewController = menuVC
+        menuVC.interactor = MenuInteractor(viewController: menuVC)
         
         menuVC.router = MenuRouter()
         menuVC.router.viewController = menuVC

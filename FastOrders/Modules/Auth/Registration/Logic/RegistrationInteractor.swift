@@ -9,9 +9,7 @@
 import Foundation
 import PKHUD
 
-class RegistrationInteractor {
-    
-    weak var viewController: RegistrationViewController?
+class RegistrationInteractor : Interactor<RegistrationViewController> {
     
     
     //MARK: - Actions

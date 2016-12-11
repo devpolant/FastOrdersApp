@@ -9,9 +9,7 @@
 import Foundation
 import PKHUD
 
-class MenuItemsInteractor {
-    
-    weak var viewController: MenuItemsViewController?
+class MenuItemsInteractor : Interactor<MenuItemsViewController> {
     
     
     //MARK: - Actions

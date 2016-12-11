@@ -72,6 +72,7 @@
 		14F97BBC1DFD79ED00AE6F13 /* OrderItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F97BBB1DFD79ED00AE6F13 /* OrderItemsViewController.swift */; };
 		14F97BC01DFD7BC100AE6F13 /* OrderItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F97BBF1DFD7BC100AE6F13 /* OrderItemTableViewCell.swift */; };
 		14F97BC21DFDD59400AE6F13 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F97BC11DFDD59400AE6F13 /* UIColor+Hex.swift */; };
+		14F97BC41DFDD85800AE6F13 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F97BC31DFDD85800AE6F13 /* Interactor.swift */; };
 		33390E958ABFA27D4B6AF878 /* Pods_FastOrders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73021F67CE8DBCEE799C7D2B /* Pods_FastOrders.framework */; };
 /* End PBXBuildFile section */
 
@@ -146,6 +147,7 @@
 		14F97BBB1DFD79ED00AE6F13 /* OrderItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderItemsViewController.swift; path = Modules/Orders/OrderItems/View/OrderItemsViewController.swift; sourceTree = "<group>"; };
 		14F97BBF1DFD7BC100AE6F13 /* OrderItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderItemTableViewCell.swift; path = Views/Cells/Table/OrderItemTableViewCell.swift; sourceTree = "<group>"; };
 		14F97BC11DFDD59400AE6F13 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Hex.swift"; path = "Utils/UIColor+Hex.swift"; sourceTree = "<group>"; };
+		14F97BC31DFDD85800AE6F13 /* Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		6A6B43FE74D127EE80531D30 /* Pods-FastOrders.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastOrders.release.xcconfig"; path = "Pods/Target Support Files/Pods-FastOrders/Pods-FastOrders.release.xcconfig"; sourceTree = "<group>"; };
 		73021F67CE8DBCEE799C7D2B /* Pods_FastOrders.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FastOrders.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB29EF4A914B9DC7234A1D0 /* Pods-FastOrders.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FastOrders.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FastOrders/Pods-FastOrders.debug.xcconfig"; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 				14CC2ACA1DF4352200BBF5B3 /* AppDelegate.swift */,
 				14CC2AF21DF4371600BBF5B3 /* RootRouter.swift */,
 				14CC2AF41DF4375400BBF5B3 /* Router.swift */,
+				14F97BC31DFDD85800AE6F13 /* Interactor.swift */,
 				14CC2ACE1DF4352200BBF5B3 /* Main.storyboard */,
 				14DE0B211DF48AFB008439D5 /* Content.storyboard */,
 				14D82B601DFC698000150120 /* Orders.storyboard */,
@@ -860,6 +863,7 @@
 			files = (
 				14CC2AE91DF4368000BBF5B3 /* RegistrationViewController.swift in Sources */,
 				14DE0B201DF470FB008439D5 /* Constants.swift in Sources */,
+				14F97BC41DFDD85800AE6F13 /* Interactor.swift in Sources */,
 				14D82B771DFC779100150120 /* JsonInitializable.swift in Sources */,
 				14D82B591DFC532800150120 /* LeftPanelViewController.swift in Sources */,
 				14D82B731DFC70DF00150120 /* OrderItem.swift in Sources */,

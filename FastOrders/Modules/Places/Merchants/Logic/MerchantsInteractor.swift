@@ -9,9 +9,7 @@
 import Foundation
 import PKHUD
 
-class MerchantsInteractor {
-    
-    weak var viewController: MerchantsViewController?
+class MerchantsInteractor : Interactor<MerchantsViewController> {
     
     
     //MARK: Actions

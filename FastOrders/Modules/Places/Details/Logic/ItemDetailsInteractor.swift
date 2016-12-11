@@ -8,13 +8,7 @@
 
 import Foundation
 
-class ItemDetailsInteractor {
-    
-    weak var viewController: ItemDetailsViewController?
-    
-    init(viewController: ItemDetailsViewController?) {
-        self.viewController = viewController
-    }
+class ItemDetailsInteractor : Interactor <ItemDetailsViewController> {
     
     
     //MARK: - Actions

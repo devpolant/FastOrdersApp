@@ -9,14 +9,8 @@
 import UIKit
 import PKHUD
 
-class CartInteractor {
+class CartInteractor : Interactor<CartViewController> {
 
-    weak var viewController: CartViewController?
-    
-    init(viewController: CartViewController?) {
-        self.viewController = viewController
-    }
-    
     
     //MARK: - Actions
     

@@ -50,8 +50,7 @@ class LoginRouter: Router {
             
             let vc = segue.destination as! RegistrationViewController
             
-            vc.interactor = RegistrationInteractor()
-            vc.interactor.viewController = vc
+            vc.interactor = RegistrationInteractor(viewController: vc)
             
             vc.router = RegistrationRouter()
             vc.router.viewController = vc

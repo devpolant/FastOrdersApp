@@ -9,13 +9,7 @@
 import UIKit
 import PKHUD
 
-class OrdersInteractor {
-    
-    weak var viewController: OrdersViewController?
-    
-    init(viewController: OrdersViewController?) {
-        self.viewController = viewController
-    }
+class OrdersInteractor : Interactor<OrdersViewController> {
     
     
     //MARK: - Actions

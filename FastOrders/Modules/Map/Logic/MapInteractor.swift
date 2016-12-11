@@ -9,9 +9,7 @@
 import UIKit
 import MapKit
 
-class MapInteractor {
-    
-    weak var viewController: MapViewController?
+class MapInteractor : Interactor <MapViewController> {
     
     
     //MARK: - Actions

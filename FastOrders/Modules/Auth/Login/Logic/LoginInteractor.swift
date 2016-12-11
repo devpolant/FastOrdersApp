@@ -9,9 +9,7 @@
 import UIKit
 import PKHUD
 
-class LoginInteractor {
-    
-    weak var viewController: LoginViewController?
+class LoginInteractor: Interactor<LoginViewController> {
     
     
     //MARK: - Actions

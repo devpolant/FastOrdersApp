@@ -24,8 +24,7 @@ class RootRouter {
         let loginVC = mainStoryboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         
         //Setup VIPER
-        loginVC.interactor = LoginInteractor()
-        loginVC.interactor.viewController = loginVC
+        loginVC.interactor = LoginInteractor(viewController: loginVC)
         
         loginVC.router = LoginRouter()
         loginVC.router.viewController = loginVC

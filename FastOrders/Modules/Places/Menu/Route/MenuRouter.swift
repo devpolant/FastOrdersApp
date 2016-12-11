@@ -28,8 +28,7 @@ class MenuRouter: Router {
         
         let menuVC = storyboard.instantiateViewController(withIdentifier: "MenuItemsViewController") as! MenuItemsViewController
         
-        menuVC.interactor = MenuItemsInteractor()
-        menuVC.interactor.viewController = menuVC
+        menuVC.interactor = MenuItemsInteractor(viewController: menuVC)
         
         menuVC.router = MenuItemsRouter()
         menuVC.router.viewController = menuVC

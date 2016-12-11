@@ -30,8 +30,7 @@ class MerchantsViewController: UIViewController, UITableViewDataSource, UITableV
     
     func initVIPER() {
     
-        interactor = MerchantsInteractor()
-        interactor.viewController = self
+        interactor = MerchantsInteractor(viewController: self)
         
         router = MerchantsRouter()
         router.viewController = self

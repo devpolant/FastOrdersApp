@@ -22,8 +22,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        interactor = MapInteractor()
-        interactor.viewController = self
+        interactor = MapInteractor(viewController: self)
         
         router = MapRouter()
         router.viewController = self

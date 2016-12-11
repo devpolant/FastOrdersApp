@@ -9,15 +9,9 @@
 import UIKit
 import PKHUD
 
-class LeftPanelInteractor {
-    
-    weak var viewController: LeftPanelViewController?
+class LeftPanelInteractor : Interactor<LeftPanelViewController> {
     
     private var logoutLoading = false
-    
-    init(viewController: LeftPanelViewController?) {
-        self.viewController = viewController
-    }
     
     
     //MARK: - Actions
