@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CartSectionHeaderView" customModule="FastOrders" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="5TK-DB-f1O"/>
+                <outlet property="totalPriceLabel" destination="Hbj-cJ-WYq" id="qLj-ww-o5J"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xkR-KW-Lig">
+                    <rect key="frame" x="123" y="10" width="129.5" height="24"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Total Price:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PlJ-zW-6Xf">
+                            <rect key="frame" x="0.0" y="0.0" width="99" height="24"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="$1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbj-cJ-WYq">
+                            <rect key="frame" x="107" y="0.0" width="22.5" height="24"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                            <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Hbj-cJ-WYq" secondAttribute="bottom" id="EE3-7V-lk3"/>
+                        <constraint firstItem="PlJ-zW-6Xf" firstAttribute="leading" secondItem="xkR-KW-Lig" secondAttribute="leading" id="LC6-0n-QlL"/>
+                        <constraint firstAttribute="bottom" secondItem="PlJ-zW-6Xf" secondAttribute="bottom" id="VCZ-Em-TUH"/>
+                        <constraint firstItem="Hbj-cJ-WYq" firstAttribute="leading" secondItem="PlJ-zW-6Xf" secondAttribute="trailing" constant="8" id="bPB-fO-wyP"/>
+                        <constraint firstItem="PlJ-zW-6Xf" firstAttribute="top" secondItem="xkR-KW-Lig" secondAttribute="top" id="inz-Mj-sQj"/>
+                        <constraint firstAttribute="trailing" secondItem="Hbj-cJ-WYq" secondAttribute="trailing" id="ubG-yi-EZl"/>
+                        <constraint firstItem="Hbj-cJ-WYq" firstAttribute="top" secondItem="xkR-KW-Lig" secondAttribute="top" id="zGl-ns-xJG"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="xkR-KW-Lig" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6MO-6W-TBv"/>
+                <constraint firstAttribute="bottom" secondItem="xkR-KW-Lig" secondAttribute="bottom" constant="10" id="9ZD-3f-VGO"/>
+                <constraint firstItem="xkR-KW-Lig" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="FL3-qG-lCm"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="13.5" y="52"/>
+        </view>
+    </objects>
+</document>

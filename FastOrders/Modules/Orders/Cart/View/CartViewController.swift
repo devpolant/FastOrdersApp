@@ -66,7 +66,7 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     //MARK: - Delegates
     
     //MARK: UITableViewDataSource
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cartItems?.count ?? 0
     }
@@ -77,6 +77,21 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     //MARK: UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let headerView = CartSectionHeaderView(frame: CGRect(x: 0, y: 0,
+                                                             width: tableView.frame.width,
+                                                             height: 44))
+        
+        headerView.price = CartManager.shared.totalPrice
+        
+        return headerView
+    }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {

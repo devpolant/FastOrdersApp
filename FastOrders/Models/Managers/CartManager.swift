@@ -20,6 +20,13 @@ class CartManager {
     
     fileprivate(set) var items = [CartItem]()
     
+    var totalPrice: Double {
+        var price = 0.0
+        for item in items {
+            price += item.menuItem.price * Double(item.quantity)
+        }
+        return price
+    }
     
     func addItemToCart(item: CartItem) {
         
