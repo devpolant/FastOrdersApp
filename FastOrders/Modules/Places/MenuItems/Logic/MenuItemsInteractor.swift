@@ -14,14 +14,14 @@ class MenuItemsInteractor {
     weak var viewController: MenuItemsViewController?
     
     
-    //MARK: Actions
+    //MARK: - Actions
     
     func actionDidSelectMenuItem(_ menuItem: MenuItem) {
         viewController?.router.presentItemDetailsViewControleller(for: menuItem)
     }
     
     
-    //MARK: Networking
+    //MARK: - Networking
     
     func loadMenuItems(for category: MenuCategory) {
         

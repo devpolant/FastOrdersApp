@@ -25,23 +25,10 @@ class MenuItemsViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setComposeBarButtonItem()
-        updateEditingEnableState()
         interactor.loadMenuItems(for: category)
     }
     
     
-    //MARK: - Interactor
-    
-    func actionDidTapStartEditingBarButtonItem(_ sender: UIBarButtonItem) {
-        beginEditingTable()
-    }
-    
-    func actionDidTapEndEditingBarButtonItem(_ sender: UIBarButtonItem) {
-        endEditingTable()
-    }
-    
-
     //MARK: - Presenter
     
     func cellForRow(at indexPath: IndexPath) -> UITableViewCell {
@@ -65,38 +52,7 @@ class MenuItemsViewController: UIViewController, UITableViewDataSource, UITableV
     
     func updateMenuItems(_ menuItems: [MenuItem]) {
         self.menuItems = menuItems
-        updateEditingEnableState()
         tableView.reloadData()
-    }
-    
-    func beginEditingTable() {
-        tableView.setEditing(true, animated: true)
-        setDoneBarButtonItem()
-    }
-    
-    func endEditingTable() {
-        tableView.setEditing(false, animated: true)
-        setComposeBarButtonItem()
-    }
-
-    func setDoneBarButtonItem() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
-                                                                 target: self,
-                                                                 action: #selector(endEditingTable))
-    }
-    
-    func setComposeBarButtonItem() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose,
-                                                                 target: self,
-                                                                 action: #selector(beginEditingTable))
-    }
-    
-    func updateEditingEnableState() {
-        self.navigationItem.rightBarButtonItem?.isEnabled = canEnableEditing()
-    }
-    
-    func canEnableEditing() -> Bool {
-        return menuItems.count > 0
     }
     
     
@@ -121,11 +77,7 @@ class MenuItemsViewController: UIViewController, UITableViewDataSource, UITableV
     //MARK: - Delegates
     
     //MARK: UITableViewDelegate
-    
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
-        return .insert
-    }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
