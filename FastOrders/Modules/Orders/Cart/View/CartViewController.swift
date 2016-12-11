@@ -8,14 +8,17 @@
 
 import UIKit
 
-class CartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var orderDateTextField: UITextField!
+    var datePicker: UIDatePicker!
     
     var interactor: CartInteractor!
     var router: CartRouter!
     
     var cartItems: [CartItem]?
+    var orderDate: Date?
     
     
     //MARK: - Life Cycle
@@ -23,7 +26,50 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupUI()
         interactor.loadCartContent()
+    }
+    
+    
+    //MARK: - View
+    
+    func setupUI() {
+        
+        datePicker = UIDatePicker()
+        
+        datePicker.minimumDate = Date().addingTimeInterval(3600) //1 hour
+        datePicker.datePickerMode = .dateAndTime
+        
+        let toolBar = UIToolbar()
+        toolBar.barStyle = .default
+        toolBar.isTranslucent = true
+        
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
+                                    target: nil,
+                                    action: nil)
+        let doneButton = UIBarButtonItem(title: "Done",
+                                         style: .done,
+                                         target: self,
+                                         action: #selector(doneDatePickerPressed))
+        
+        toolBar.setItems([space, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        toolBar.sizeToFit()
+        
+        orderDateTextField.inputAccessoryView = toolBar
+        
+        orderDateTextField.inputView = datePicker
+    }
+    
+    
+    //MARK: - Interactor
+    
+    @IBAction func actionDidTapSaveBarItem(_ sender: Any) {
+        interactor.actionSaveOrder(with: cartItems, orderDate: orderDate)
+    }
+    
+    func doneDatePickerPressed(){
+        orderDateTextField.resignFirstResponder()
     }
     
     
@@ -55,6 +101,15 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.reloadData()
     }
     
+    func clearCart() {
+        
+        self.cartItems = nil
+        self.orderDate = nil
+        self.orderDateTextField.text = ""
+        
+        tableView.reloadData()
+    }
+    
     
     //MARK: - Entity
     
@@ -64,6 +119,23 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     //MARK: - Delegates
+    
+    //MARK: - UITextFieldDelegate
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        orderDate = datePicker.date
+        textField.text = orderDate?.readableString
+        
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        orderDate = datePicker.date
+        textField.text = orderDate?.readableString
+    }
+    
     
     //MARK: UITableViewDataSource
 

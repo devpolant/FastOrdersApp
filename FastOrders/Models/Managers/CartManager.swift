@@ -19,6 +19,7 @@ class CartManager {
     private init() {}
     
     fileprivate(set) var items = [CartItem]()
+    var currentMerchant: Merchant?
     
     var totalPrice: Double {
         var price = 0.0
@@ -42,6 +43,11 @@ class CartManager {
         if let index = indexOf(item: item) {
             items.remove(at: index)
         }
+    }
+    
+    func clear() {
+        items.removeAll()
+        currentMerchant = nil
     }
     
     private func indexOf(item: CartItem) -> Int? {

@@ -26,6 +26,11 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         
         interactor.loadMenuCategories(for: merchant)
+        
+        //TODO: Delete this stub!!!
+        if CartManager.shared.items.isEmpty {
+            CartManager.shared.currentMerchant = merchant
+        }
     }
     
     

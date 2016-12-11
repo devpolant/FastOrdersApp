@@ -14,6 +14,7 @@ typealias PlacesCompletionHandler = (_ success: Bool, _ message: String?, _ merc
 typealias MenuCategoriesCompletionHandler = (_ success: Bool, _ message: String?, _ merchants: [MenuCategory]?) -> Void
 typealias MenuItemsCompletionHandler = (_ success: Bool, _ message: String?, _ merchants: [MenuItem]?) -> Void
 typealias OrdersCompletionHandler = (_ success: Bool, _ message: String?, _ orders: [Order]?) -> Void
+typealias CreateOrderCompletionHandler = (_ success: Bool, _ message: String, _ order: Order?) -> Void
 
 class ServiceManager {
     
@@ -220,6 +221,31 @@ class ServiceManager {
         }
     }
     
+    
+    func createOrder(merchantId: String, with items: [CartItem], orderDate: Date, completion: @escaping CreateOrderCompletionHandler) {
+        
+        Alamofire
+            .request(OrderRouter.create(merchantId: merchantId,
+                                        items: items,
+                                        orderDate: orderDate,
+                                        token: self.accessToken!))
+            .responseJSON { (dataResponse) in
+                
+                guard let response = dataResponse.result.value as? [String: Any] else {
+                    completion(false, "Something went wrong", nil)
+                    return
+                }
+                
+                let success = !(response["error"] as! Bool)
+                let message = response["message"] as! String
+                let orderJson = response["order"] as! [String: Any]
+                
+                let order = Order(from: orderJson)
+                
+                completion(success, message, order)
+        }
+    }
+    
 }
 
 
@@ -377,10 +403,12 @@ enum OrderRouter: URLRequestConvertible {
     private static let baseURLString = "\(Constants.baseApiServicePath)/orders/customer"
     
     case list(token: String)
+    case create(merchantId: String, items: [CartItem], orderDate: Date, token: String)
     
     private var method: HTTPMethod {
         switch self {
-        case .list:
+        case .list:     fallthrough
+        case .create:
             return .post
         }
     }
@@ -389,12 +417,16 @@ enum OrderRouter: URLRequestConvertible {
         switch self {
         case .list:
             return "/list"
+        case .create:
+            return "/create"
         }
     }
     
     private var token: String {
         switch self {
         case let .list(token):
+            return token
+        case let .create(_, _, _, token):
             return token
         }
     }
@@ -413,6 +445,26 @@ enum OrderRouter: URLRequestConvertible {
         
         switch self {
         case .list:
+            break
+        case let .create(merchantId, cartItems, orderDate, _):
+            
+            urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            
+            let availabilityDate = orderDate.timeIntervalSince1970
+            
+            var items = Array<[String: Any]>()
+            for item in cartItems {
+                items.append([
+                    "item_id": item.menuItem.id,
+                    "quantity": item.quantity
+                    ])
+            }
+            
+            let params = ["merchant_id": merchantId,
+                          "availability_date": availabilityDate,
+                          "items": items] as [String : Any]
+            
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: params)
             break
         }
         
