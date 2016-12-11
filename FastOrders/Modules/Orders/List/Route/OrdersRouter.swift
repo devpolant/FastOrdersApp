@@ -23,4 +23,18 @@ class OrdersRouter: Router {
         return viewController
     }
     
+    
+    //MARK: - Routing
+    
+    func presentOrderItemsViewController(for order: Order) {
+        
+        let storyboard = UIStoryboard(name: "Orders", bundle: nil)
+        
+        let vc = storyboard.instantiateViewController(withIdentifier: "OrderItemsViewController") as! OrderItemsViewController
+        
+        vc.order = order
+        
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }

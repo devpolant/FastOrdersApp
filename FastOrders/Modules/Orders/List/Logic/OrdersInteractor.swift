@@ -21,7 +21,7 @@ class OrdersInteractor {
     //MARK: - Actions
     
     func actionDidSelectOrder(_ order: Order) {
-        
+        viewController?.router.presentOrderItemsViewController(for: order)
     }
     
     

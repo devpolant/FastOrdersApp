@@ -13,11 +13,7 @@ class OrderTableViewCell: UITableViewCell {
     @IBOutlet weak var merchantAvatarImageView: UIImageView!
     @IBOutlet weak var merchantBusinessNameLabel: UILabel!
     
-    @IBOutlet weak var orderItemsCountLabel: UILabel!
     @IBOutlet weak var totalPriceLabel: UILabel!
-    
     @IBOutlet weak var orderDateLabel: UILabel!
-    
     @IBOutlet weak var orderStateLabel: UILabel!
-    
 }

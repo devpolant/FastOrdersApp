@@ -43,7 +43,6 @@ class OrdersViewController: UIViewController, UITableViewDataSource, UITableView
         cell?.merchantBusinessNameLabel.text = order.merchant.businessName
         cell?.merchantAvatarImageView.image = UIImage(named: "watch")
         
-        cell?.orderItemsCountLabel.text = String(order.orderItems.count)
         cell?.totalPriceLabel.text = "$\(order.totalPrice)"
         cell?.orderDateLabel.text = order.availabilityDate.readableString
         
