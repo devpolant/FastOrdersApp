@@ -8,17 +8,8 @@
 
 import UIKit
 
-class MapRouter: Router {
-    
-    weak var viewController: MapViewController?
-    
-    
-    //MARK: - Parent
-    
-    func contentViewController() -> UIViewController? {
-        return viewController
-    }
-    
+class MapRouter: Router<MapViewController> {
+   
     
     //MARK: - Routes
     
@@ -29,9 +20,7 @@ class MapRouter: Router {
         let menuVC = storyboard.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
         
         menuVC.interactor = MenuInteractor(viewController: menuVC)
-        
-        menuVC.router = MenuRouter()
-        menuVC.router.viewController = menuVC
+        menuVC.router = MenuRouter(viewController: menuVC)
         
         menuVC.merchant = merchant
         

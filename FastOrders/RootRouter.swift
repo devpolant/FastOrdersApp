@@ -25,9 +25,7 @@ class RootRouter {
         
         //Setup VIPER
         loginVC.interactor = LoginInteractor(viewController: loginVC)
-        
-        loginVC.router = LoginRouter()
-        loginVC.router.viewController = loginVC
+        loginVC.router = LoginRouter(viewController: loginVC)
         
         let navigationVC = UINavigationController(rootViewController: loginVC)
         

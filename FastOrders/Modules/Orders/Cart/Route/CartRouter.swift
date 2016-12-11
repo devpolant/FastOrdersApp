@@ -8,19 +8,6 @@
 
 import UIKit
 
-class CartRouter: Router {
-    
-    weak var viewController: CartViewController?
-    
-    init(viewController: CartViewController?) {
-        self.viewController = viewController
-    }
-    
-    
-    //MARK: - Parent
-    
-    func contentViewController() -> UIViewController? {
-        return viewController
-    }
+class CartRouter: Router<CartViewController> {
     
 }

@@ -8,16 +8,7 @@
 
 import UIKit
 
-class MenuRouter: Router {
-    
-    weak var viewController: MenuViewController?
-    
-    
-    //MARK: - Parent
-    
-    func contentViewController() -> UIViewController? {
-        return viewController
-    }
+class MenuRouter: Router<MenuViewController> {
     
     
     //MARK: - Routes
@@ -29,9 +20,7 @@ class MenuRouter: Router {
         let menuVC = storyboard.instantiateViewController(withIdentifier: "MenuItemsViewController") as! MenuItemsViewController
         
         menuVC.interactor = MenuItemsInteractor(viewController: menuVC)
-        
-        menuVC.router = MenuItemsRouter()
-        menuVC.router.viewController = menuVC
+        menuVC.router = MenuItemsRouter(viewController: menuVC)
         
         menuVC.category = category
         

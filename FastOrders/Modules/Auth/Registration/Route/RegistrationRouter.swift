@@ -9,13 +9,8 @@
 import Foundation
 import UIKit
 
-class RegistrationRouter: Router {
+class RegistrationRouter: Router<RegistrationViewController> {
     
-    weak var viewController: RegistrationViewController?
-    
-    func contentViewController() -> UIViewController? {
-        return viewController
-    }
     
     func presentMapViewController() {
         

@@ -9,16 +9,7 @@
 import Foundation
 import UIKit
 
-class LoginRouter: Router {
-    
-    weak var viewController: LoginViewController?
-    
-    
-    //MARK: - Parent
-    
-    func contentViewController() -> UIViewController? {
-        return viewController
-    }
+class LoginRouter: Router<LoginViewController> {
     
     
     //MARK: - Actions
@@ -51,9 +42,7 @@ class LoginRouter: Router {
             let vc = segue.destination as! RegistrationViewController
             
             vc.interactor = RegistrationInteractor(viewController: vc)
-            
-            vc.router = RegistrationRouter()
-            vc.router.viewController = vc
+            vc.router = RegistrationRouter(viewController: vc)
             
         default:
             break

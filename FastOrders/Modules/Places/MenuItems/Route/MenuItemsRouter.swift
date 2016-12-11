@@ -8,16 +8,7 @@
 
 import UIKit
 
-class MenuItemsRouter: Router {
-    
-    weak var viewController: MenuItemsViewController?
-    
-    
-    //MARK: - Parent
-    
-    func contentViewController() -> UIViewController? {
-        return viewController
-    }
+class MenuItemsRouter: Router<MenuItemsViewController> {
     
     
     //MARK: - Routing

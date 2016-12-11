@@ -8,25 +8,12 @@
 
 import UIKit
 
-class LeftPanelRouter: Router {
-    
-    weak var viewController: LeftPanelViewController?
-    
-    init(viewController: LeftPanelViewController?) {
-        self.viewController = viewController
-    }
-    
-    
-    //MARK: - Parent
-    
-    func contentViewController() -> UIViewController? {
-        return viewController
-    }
-    
+class LeftPanelRouter: Router<LeftPanelViewController> {
+
     
     //MARK: - Routes
     
-    func dismiss(animated: Bool) {
+    override func dismiss(animated: Bool) {
         
         if let navigationController = viewController?.sidePanelController.navigationController {
             navigationController.popViewController(animated: animated)

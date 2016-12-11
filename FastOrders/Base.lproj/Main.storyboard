@@ -76,6 +76,7 @@
                                                     <attributedString key="attributedTitle">
                                                         <fragment content="SIGN UP FOR FREE">
                                                             <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.59059631820000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <font key="NSFont" size="15" name="HelveticaNeue-Medium"/>
                                                                 <integer key="NSUnderline" value="1"/>
                                                             </attributes>

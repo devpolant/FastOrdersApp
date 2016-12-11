@@ -8,19 +8,6 @@
 
 import UIKit
 
-class ItemDetailsRouter: Router {
-    
-    weak var viewController: ItemDetailsViewController?
-    
-    init(viewController: ItemDetailsViewController?) {
-        self.viewController = viewController
-    }
-    
-    
-    //MARK: - Parent
-    
-    func contentViewController() -> UIViewController? {
-        return viewController
-    }
+class ItemDetailsRouter: Router<ItemDetailsViewController> {
     
 }

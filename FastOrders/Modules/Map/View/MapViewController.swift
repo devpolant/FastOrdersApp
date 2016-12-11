@@ -22,10 +22,12 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        initVIPER()
+    }
+    
+    func initVIPER() {
         interactor = MapInteractor(viewController: self)
-        
-        router = MapRouter()
-        router.viewController = self
+        router = MapRouter(viewController: self)
     }
     
     
