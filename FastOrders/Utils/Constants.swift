@@ -9,5 +9,5 @@
 import Foundation
 
 class Constants {
-    static let baseApiServicePath = "http://localhost:8080"
+    static let baseApiServicePath = "https://fastorders.herokuapp.com/"
 }
