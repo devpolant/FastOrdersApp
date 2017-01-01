@@ -23,7 +23,7 @@ class MenuItemsInteractor : Interactor<MenuItemsViewController> {
     
     func loadMenuItems(for category: MenuCategory) {
         
-        PKHUD.sharedHUD.contentView = PKHUDProgressView(title: "Menu Items", subtitle: "Loading...")
+        PKHUD.sharedHUD.contentView = PKHUDProgressView(title: viewController?.menuTitle, subtitle: "Loading...")
         PKHUD.sharedHUD.show()
         
         ServiceManager.shared.loadMenuItems(for: category) { [weak self] success, message, menuItems in

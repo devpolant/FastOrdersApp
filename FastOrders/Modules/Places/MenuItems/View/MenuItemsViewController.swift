@@ -18,6 +18,9 @@ class MenuItemsViewController: UIViewController, UITableViewDataSource, UITableV
     fileprivate var menuItems = [MenuItem]()
     
     var category: MenuCategory!
+    var menuTitle: String {
+        return category.name
+    }
     
     
     //MARK: - Life Cycle
@@ -25,7 +28,15 @@ class MenuItemsViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupUI()
         interactor.loadMenuItems(for: category)
+    }
+    
+    
+    //MARK: - View
+    
+    func setupUI() {
+        updateTitle(self.menuTitle)
     }
     
     
@@ -53,6 +64,10 @@ class MenuItemsViewController: UIViewController, UITableViewDataSource, UITableV
     func updateMenuItems(_ menuItems: [MenuItem]) {
         self.menuItems = menuItems
         tableView.reloadData()
+    }
+    
+    func updateTitle(_ title: String) {
+        self.navigationItem.title = title
     }
     
     
