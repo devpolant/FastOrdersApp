@@ -6,12 +6,12 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "watch-Spotlight-40@2x.png",
+      "filename" : "watch-big@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "watch-Spotlight-40@3x.png",
+      "filename" : "watch-big@3x.png",
       "scale" : "3x"
     }
   ],

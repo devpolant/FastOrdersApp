@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -87,7 +87,7 @@
                                                     <action selector="actionDidTapSignUpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="54H-MY-rqo"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="watch" translatesAutoresizingMaskIntoConstraints="NO" id="6ku-gJ-MT4">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="watch-big" translatesAutoresizingMaskIntoConstraints="NO" id="6ku-gJ-MT4">
                                                 <rect key="frame" x="123.5" y="75" width="128" height="128"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="128" id="XW7-Ly-gsI"/>
@@ -241,7 +241,7 @@
                                                     <action selector="actionDidTapSignUpButton:" destination="5ua-Is-Oba" eventType="touchUpInside" id="axT-Tq-gmw"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="watch" translatesAutoresizingMaskIntoConstraints="NO" id="sBU-wT-FGn">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="watch-big" translatesAutoresizingMaskIntoConstraints="NO" id="sBU-wT-FGn">
                                                 <rect key="frame" x="124" y="75" width="128" height="128"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="128" id="EVw-kC-FL4"/>
@@ -333,6 +333,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="watch" width="128" height="128"/>
+        <image name="watch-big" width="76" height="76"/>
     </resources>
 </document>
